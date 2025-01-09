@@ -1,0 +1,13 @@
+
+{
+    "rewrites": [
+        {
+            "source": "/Home",
+            "destination": "/index.html"
+        },
+        {
+            "source": "/giftCards",
+            "destination": "/Html/Pages/GiftCards/giftCardHome.html"
+        }
+    ]
+}
