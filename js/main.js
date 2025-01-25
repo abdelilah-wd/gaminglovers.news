@@ -1,8 +1,15 @@
+window.onload = function () {
+    document.querySelector(".loader-screen").remove();
+}
+
 let carouselItems = document.querySelectorAll(".carousel-inner .carousel-item");
 setInterval(function () {
     carouselItems.forEach(function (ele, index) {
         if (ele.className.includes("active")) {
-            ele.style.backgroundImage = `url(../images/home-bg-${index + 1}.jpg`
+            if (index < 1) {
+                ele.style.backgroundImage = `url(../images/home-bg-${index + 1}.webp`
+            } else
+                ele.style.backgroundImage = `url(../images/home-bg-${index + 1}.jpg` || `url(../images/home-bg-${index + 1}.webp`
         }
     })
     if (window.innerWidth < 992) {
@@ -34,4 +41,18 @@ window.addEventListener("scroll", () => {
         header.classList.remove("in-bottom");
         header.classList.remove("in-middle");
     }
+
+    if (heroBottom <= -700) {
+        console.log("is here is here ????");
+    }
 });
+
+
+// STart Trending Section 
+// let trendingGameImg = document.querySelectorAll(".trend-section .row .col .game-img");
+
+// for (let i = 0; i < trendingGameImg.length; i++) {
+//     let getBgName = trendingGameImg[i].getAttribute("bg-img-name");
+//     trendingGameImg[i].style.backgroundImage = `url(../images/${getBgName})`
+// }
+// End Trending Section 

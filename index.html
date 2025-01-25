@@ -17,11 +17,23 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link
-            href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
             rel="stylesheet">
+        <!-- Google tag (gtag.js) -->
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KYVZQJ65BN"></script>
     </head>
 
     <body>
+
+        <!-- loading window -->
+        <!-- <div class="loading">
+            <div class="content">
+                <span></span>
+            </div>
+        </div> -->
+        <div class="loader-screen">
+            <div class="loader"></div>
+        </div>
         <!-- Start Header Section  -->
         <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
             <div class="container">
@@ -37,13 +49,13 @@
                             <a class="nav-link active" aria-current="page" href="/Home">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Browse</a>
+                            <a class="nav-link" aria-current="page" href="#">Browse</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Our Services</a>
+                            <a class="nav-link" aria-current="page" href="#">Our Services</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Contact Us</a>
+                            <a class="nav-link" aria-current="page" href="#">Contact Us</a>
                         </li>
                         <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -79,10 +91,11 @@
                 <div class="carousel-item active" data-bs-interval="4000">
                     <div class="carousel-caption d-none d-md-block">
                         <div class="game-info">
-                            <img src="images/home-game-icon-1.webp" alt="">
-                            <h2>Fire Fire | the best game in the moth</h2>
+                            <img src="images/monpolygo-logo.webp" alt="">
+                            <h2>Monopoly Go</h2>
                         </div>
-                        <a href="" class="dowBtn">Download</a>
+                        <span>complate the offer to download it for free</span>
+                        <a href="" class="dowBtn">Download Now</a>
                     </div>
                 </div>
                 <div class="carousel-item" data-bs-interval="4000">
@@ -91,7 +104,7 @@
                             <img src="images/home-game-icon-1.webp" alt="">
                             <h2>Fire Fire | the best game in the moth</h2>
                         </div>
-                        <a href="" class="dowBtn">Download</a>
+                        <a href="" class="dowBtn">Download Now</a>
                     </div>
                 </div>
                 <div class="carousel-item" data-bs-interval="4000">
@@ -100,7 +113,7 @@
                             <img src="images/home-game-icon-1.webp" alt="">
                             <h2>Fire Fire | the best game in the moth</h2>
                         </div>
-                        <a href="" class="dowBtn">Download</a>
+                        <a href="" class="dowBtn">Download Now</a>
                     </div>
                 </div>
             </div>
@@ -116,6 +129,137 @@
             </button>
         </div>
         <!-- End Landing Section  -->
+
+        <!-- Start Tranding section  -->
+        <div class="trend-section">
+            <div class="container">
+                <div class="main-heading">
+                    <h2>Trending Now</h2>
+                    <a href="#" class="view-all">View All <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="game-img" bg-img-name="monpolygo-logo.webp">
+                            <div class="download-btn">
+                                <a href="#">Download</a>
+                            </div>
+                            <div class="bottom-info">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    4.8
+                                </div>
+                                <div class="download-count">
+                                    <i class="fa-solid fa-download"></i>
+                                    5M
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <div class="category">
+                                <span>action</span>
+                                <span>mind</span>
+                            </div>
+                            <div class="game-title">
+                                Monopoly Go The best strategy game
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="game-img">
+                            <div class="download-btn">
+                                <a href="#">Download Now</a>
+                            </div>
+                            <div class="bottom-info">
+                                <div class="stars">
+                                    4.8
+                                </div>
+                                <div class="numOf-down">
+                                    5M
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <div class="category">
+
+                            </div>
+                            <div class="game-title">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="game-img">
+                            <div class="download-btn">
+                                <a href="#">Download Now</a>
+                            </div>
+                            <div class="bottom-info">
+                                <div class="stars">
+                                    4.8
+                                </div>
+                                <div class="numOf-down">
+                                    5M
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <div class="category">
+
+                            </div>
+                            <div class="game-title">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="game-img">
+                            <div class="download-btn">
+                                <a href="#">Download Now</a>
+                            </div>
+                            <div class="bottom-info">
+                                <div class="stars">
+                                    4.8
+                                </div>
+                                <div class="numOf-down">
+                                    5M
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <div class="category">
+
+                            </div>
+                            <div class="game-title">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="game-img">
+                            <div class="download-btn">
+                                <a href="#">Download Now</a>
+                            </div>
+                            <div class="bottom-info">
+                                <div class="stars">
+                                    4.8
+                                </div>
+                                <div class="numOf-down">
+                                    5M
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <div class="category">
+
+                            </div>
+                            <div class="game-title">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Tranding section  -->
         <!-- SCRIPTS  -->
         <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/bootstrap.bundle.min.js.map"></script>

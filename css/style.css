@@ -4,8 +4,14 @@
 :root {
     --dark-blue-color: #070720;
     --main-blue-color: #0b0c2a;
+    --main-red-color: #e53637;
+    --gray-color: #b7b7b7;
+    --scondry-gray-color: rgb(61, 61, 61);
     --main-transition-duration: 0.3s;
     --scondry-transition-duration: 0.5s;
+
+    --main-section-padding: 100px;
+    --scondry-section-padding: 60px;
 }
 
 /* End Variable */
@@ -14,6 +20,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+
 }
 
 html {
@@ -35,25 +42,83 @@ a {
 }
 
 /* End Global Rules  */
+
+/* Loader Screen */
+.loader-screen {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--main-blue-color);
+    position: fixed;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader {
+    height: 80px;
+    aspect-ratio: 1;
+    display: grid;
+}
+
+.loader:before,
+.loader:after {
+    content: "";
+    --c: no-repeat linear-gradient(#e53637 0 0);
+    background: var(--c), var(--c);
+    background-size: 25% 50%;
+    animation: l5 1.5s infinite linear;
+}
+
+.loader:after {
+    transform: scale(-1);
+}
+
+@keyframes l5 {
+
+    0%,
+    5% {
+        background-position: 33.4% 100%, 66.6% 100%
+    }
+
+    25% {
+        background-position: 33.4% 100%, 100% 0
+    }
+
+    50% {
+        background-position: 0 0, 100% 0
+    }
+
+    75% {
+        background-position: 0 0, 66.6% 100%
+    }
+
+    95%,
+    100% {
+        background-position: 33.4% 100%, 66.6% 100%
+    }
+}
+
+/* End Loader Screen  */
+
 /* Start Component  */
 .dowBtn {
     display: block;
-    padding: 0.6rem 1.3rem;
-    border-radius: 10px;
-    border: 0.2rem solid var(--main-blue-color);
-    background-color: var(--main-blue-color);
+    padding: 1rem 1.3rem;
+    border-radius: 4px;
+    background-color: var(--main-red-color);
     width: fit-content;
-    font-weight: 800;
+    font-family: "Source Code Pro", sans-serif;
+    letter-spacing: 2px;
+    font-weight: 700;
     font-size: 16px;
-    color: rgb(0 182 249);
+    color: white;
     text-transform: uppercase;
-    box-shadow: 0px 0px 10px 0px #ffffff4a;
-    letter-spacing: 1px;
     transition: var(--main-transition-duration);
 }
 
 .dowBtn:hover {
-    color: blue;
+    color: white;
 }
 
 /* End Component  */
@@ -65,6 +130,12 @@ nav.navbar {
     z-index: 100;
     box-shadow: 1px 6px 20px #000000c9;
     transition: var(--scondry-transition-duration);
+}
+
+@media (min-width: 992px) {
+    nav.navbar {
+        padding: 0;
+    }
 }
 
 .navbar.in-top {
@@ -104,14 +175,19 @@ nav.navbar {
 }
 
 .navbar .navbar-collapse .nav-item .nav-link {
-    color: white;
+    color: var(--gray-color);
     font-weight: 600;
-    padding: 0.5rem 1rem;
+    padding: 1rem 1.2rem;
     transition: var(--main-transition-duration);
 }
 
 .navbar .navbar-collapse .nav-item .nav-link:hover {
-    color: #8392ff;
+    color: white;
+}
+
+.navbar .navbar-collapse .nav-item .nav-link.active {
+    background-color: var(--main-red-color);
+    color: white;
 }
 
 /* End Header Section */
@@ -138,7 +214,7 @@ nav.navbar {
 }
 
 .carousel .carousel-item .carousel-caption {
-    width: 80%;
+    width: 90%;
     left: 50%;
     transform: translateX(-50%);
     display: block !important;
@@ -146,8 +222,8 @@ nav.navbar {
 
 .carousel .carousel-item .game-info {
     display: flex;
-    align-items: center;
-    gap: 1rem;
+    align-items: start;
+    gap: 0.5rem;
     margin-bottom: 2rem;
     flex-wrap: wrap;
 }
@@ -163,7 +239,7 @@ nav.navbar {
     font-weight: 900;
     font-size: 2rem;
     text-transform: capitalize;
-    color: var(--main-blue-color);
+    color: white;
 }
 
 @media (max-width: 587px) {
@@ -218,3 +294,180 @@ nav.navbar {
         display: none;
     }
 }
+
+/* Start Trending Section  */
+.trend-section {
+    padding-top: var(--main-section-padding);
+    padding-bottom: var(--main-section-padding);
+}
+
+.trend-section .main-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.trend-section .main-heading h2 {
+    color: white;
+    font-weight: 800;
+    font-family: Oswald, sans-serif;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    padding-left: 15px;
+    position: relative;
+}
+
+.trend-section .main-heading h2::before {
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 32px;
+    left: 0;
+    top: 0;
+    background: var(--main-red-color);
+}
+
+.trend-section .main-heading a {
+    color: white;
+    font-family: "Source Code Pro", sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.trend-section .main-heading a i {
+    font-size: 14px;
+}
+
+.trend-section .row {}
+
+.trend-section .row .col {
+    flex: 0 0 calc(100% / 4);
+    max-width: calc(100% / 4);
+}
+
+@media(max-width: 992px) {
+    .trend-section .row .col {
+        flex: 0 0 calc(100% / 3);
+        max-width: calc(100% / 3);
+    }
+}
+
+@media(max-width: 768px) {
+    .trend-section .row .col {
+        flex: 0 0 calc(100% / 2);
+        max-width: calc(100% / 2);
+    }
+}
+
+@media(max-width: 576px) {
+    .trend-section .row .col {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+.trend-section .row .col .game-img {
+    height: 325px;
+    background-image: url(../images/monpolygo-logo.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+}
+
+.trend-section .row .col .game-img:hover .download-btn {
+    transform: translateY(0rem)
+}
+
+.trend-section .row .game-img .download-btn {
+    width: 100%;
+    height: 100%;
+    background: #000000ba;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    transform: translateY(30rem)
+}
+
+.trend-section .row .game-img .download-btn a {
+    display: block;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--main-red-color);
+    border-radius: 4px;
+    background-color: var(--main-red-color);
+    width: fit-content;
+    font-family: "Source Code Pro", sans-serif;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 16px;
+    color: white;
+    text-transform: uppercase;
+    transition: var(--main-transition-duration);
+}
+
+.trend-section .row .game-img .download-btn a:hover {
+    border: 2px solid var(--main-red-color);
+    background-color: transparent;
+    color: var(--main-red-color);
+}
+
+.trend-section .row .game-img .bottom-info {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    bottom: 0;
+    padding: 10px;
+    color: white;
+}
+
+.trend-section .row .game-img .bottom-info .stars,
+.trend-section .row .game-img .bottom-info .download-count {
+    padding: 1px 14px;
+    background: var(--scondry-gray-color);
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.trend-section .game-img .bottom-info i {
+    font-size: 11px;
+}
+
+.trend-section .col .info .category {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    margin: 0.5rem 0;
+}
+
+.trend-section .col .info .category span {
+    color: white;
+    font-size: 11px;
+    padding: 1px 6px;
+    border-radius: 6px;
+    background: #6d6d6d;
+    font-weight: 700;
+}
+
+.trend-section .info .game-title {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+/* End Trending Section  */
