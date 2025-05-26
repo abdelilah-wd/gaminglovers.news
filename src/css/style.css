@@ -205,7 +205,7 @@ nav.navbar {
   height: calc(80vh - 65px);
 }
 @media (max-width :587px) {
-  ..carousel .carousel-inner {
+  .carousel .carousel-inner {
     height: calc(60vh - 65px);
   }
 }
