@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 async function fetchData() {
-    let filePath = "/../data.json";
+    let filePath = "/data.json";
     try {
         let response = await fetch(filePath);
         if (!response.ok) {
