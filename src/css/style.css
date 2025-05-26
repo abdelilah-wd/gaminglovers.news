@@ -343,7 +343,22 @@ nav.navbar {
   font-size: 14px;
 }
 
-.trend-section .row .content {padding: 15px 10px;
+.trend-section .row>div {
+  flex: 0 0 calc(100%/ 4);
+}
+
+@media (max-width: 992px) {
+  .trend-section .row>div {
+    flex: 0 0 calc(100%/ 2);
+  }
+}
+@media (max-width: 576px) {
+  .trend-section .row>div {
+      flex: 0 0 80%;
+    }
+}
+.trend-section .row .content {
+  padding: 15px 10px;
   background: #0000005e;
   border-radius: 10px;
   box-shadow: 0 0 20px #ffffff1f;
@@ -351,13 +366,36 @@ nav.navbar {
 
 
 .trend-section .row .game-img {
-  height: 325px;
+  height: 300px;
   background-image: url(/assets/images/last-war.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
   border-radius: 10px;
+}
+
+@media (max-width: 1200px) {
+  .trend-section .row .game-img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 992px) {
+  .trend-section .row .game-img {
+    height: 300px;
+  }
+}
+
+@media (max-width: 767px) {
+  .trend-section .row .game-img {
+    height: 230px;
+  }
+}
+@media (max-width: 576px) {
+  .trend-section .row .game-img {
+    height: 230px;
+  }
 }
 
 .trend-section .row .game-img:hover .download-btn {
@@ -403,7 +441,7 @@ nav.navbar {
   align-items: center;
   justify-content: space-between;
   bottom: 0;
-  padding: 10px;
+  padding: 10px 0px;
   color: white;
 }
 
@@ -443,7 +481,7 @@ nav.navbar {
 .trend-section .info .game-title {
   font-weight: 700;
   font-size: 18px;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   color: white;
 }
 
