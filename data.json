@@ -1,0 +1,52 @@
+{
+    "carouselItems": {
+        "carouselOne": {
+            "bgImg": "/assets/images/home-bg-1.jpg",
+            "gameIcon": "/assets/images/last-war.webp",
+            "gameTitle": "Last War",
+            "download-link": "/download/monpoly-go"
+        },
+        "carouselTwo": {
+            "bgImg": "/assets/images/home-bg-2.jpg",
+            "gameIcon": "/assets/images/monpolygo-logo.webp",
+            "gameTitle": "Free Fire",
+            "download-link": "/download/monpoly-go"
+        },
+        "carouselThree": {
+            "bgImg": "/assets/images/home-bg-3.jpg",
+            "gameIcon": "/assets/images/last-war.webp",
+            "gameTitle": "Pubge",
+            "download-link": "/download/monpoly-go"
+        }
+    },
+    "trendingGames": {
+        "gameOne": {
+            "bgImg": "/assets/images/last-war.webp",
+            "stars": "5",
+            "dowCount": "4.5",
+            "gameTitle": "Last War",
+            "category": "action"
+        },
+        "gameTwo": {
+            "bgImg": "/assets/images/last-war.webp",
+            "stars": "5",
+            "dowCount": "4.5",
+            "gameTitle": "Last War",
+            "category": "action"
+        },
+        "gameThree": {
+            "bgImg": "/assets/images/last-war.webp",
+            "stars": "5",
+            "dowCount": "4.5",
+            "gameTitle": "Last War",
+            "category": "action"
+        },
+        "gameFour": {
+            "bgImg": "/assets/images/last-war.webp",
+            "stars": "5",
+            "dowCount": "4.5",
+            "gameTitle": "Last War",
+            "category": "action"
+        }
+    }
+}

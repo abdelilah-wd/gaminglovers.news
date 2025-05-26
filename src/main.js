@@ -4,7 +4,8 @@ import '@fortawesome/fontawesome-free/css/all.min.css'
 import './css/style.css'
 
 document.addEventListener("DOMContentLoaded", () => {
-    const Observe = new MutationObserver((mutations, obs) => {
+    fetchData();
+    const Observe = new MutationObserver(async (mutations, obs) => {
         const loadScreen = document.querySelector(".loader-screen");
         if (loadScreen) {
             setTimeout(() => {
@@ -34,31 +35,39 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
         }
-        
+
         // change carousel-item background
         let carouselItems = document.querySelectorAll(".carousel-inner .carousel-item");
         if (carouselItems) {
-            setInterval(function () {
-                carouselItems.forEach(function (ele, index) {
-                    if (ele.className.includes("active")) {
-                        ele.style.backgroundImage = `url(/assets/images/home-bg-${index + 1}.jpg`;
-                    }
-                })
+            let carouselItemsData = await fetchData();
+            carouselItemsData = carouselItemsData.carouselItems;
+            let allItems = [...Object.keys(carouselItemsData)];
+            carouselItems.forEach(function (ele, index) {
+                ele.style.backgroundImage = `url(${carouselItemsData[allItems[index]].bgImg})`;
+                document.querySelectorAll(".carousel-item .game-info img")[index].src = `${carouselItemsData[allItems[index]].gameIcon}`
+                document.querySelectorAll(".carousel-item .game-info h2")[index].innerHTML = `${carouselItemsData[allItems[index]].gameTitle}`
+            })
+            setInterval(() => {
                 if (window.innerWidth < 992) {
                     document.getElementById("carouselWithCaptions").classList.remove("container");
                 } else {
                     document.getElementById("carouselWithCaptions").classList.add("container");
                 }
-            }, 200)
+            }, 500);
         }
 
         // Trending Section
-        const trendingGameImg = document.querySelectorAll(".trend-section .row .col .game-img");
+        const trendingGameImg = document.querySelectorAll(".trend-section .row .game-img");
         if (trendingGameImg) {
+            let trendingGameData = await fetchData();
+            trendingGameData = trendingGameData.trendingGames;
+            let allItems = [...Object.keys(trendingGameData)];
             trendingGameImg.forEach((ele, index) => {
-                let gameBgName = ele.getAttribute("bg-img-name");
-                console.log(gameBgName);
-                ele.style.backgroundImage = `url(/assets/images/${gameBgName})`;
+                ele.style.backgroundImage = `url(${trendingGameData[allItems[index]].bgImg})`;
+                document.querySelectorAll(".trend-section .row .info .stars")[index].innerHTML = `<i class="fa-solid fa-star"></i>${trendingGameData[allItems[index]].stars}`
+                document.querySelectorAll(".trend-section .row .info .download-count")[index].innerHTML = `<i class="fa-solid fa-download"></i>${trendingGameData[allItems[index]].dowCount}M`
+                document.querySelectorAll(".trend-section .row .info .game-title")[index].innerHTML = `${trendingGameData[allItems[index]].gameTitle}`;
+                document.querySelectorAll(".trend-section .row .info .category")[index].innerHTML = `<span>${trendingGameData[allItems[index]].category}</span>`;
             })
         }
         if (loadScreen && header && hero && carouselItems && trendingGameImg) {
@@ -70,3 +79,18 @@ document.addEventListener("DOMContentLoaded", () => {
         subtree: true
     })
 })
+
+
+async function fetchData() {
+    let filePath = "../../data.json";
+    try {
+        let response = await fetch(filePath);
+        if (!response.ok) {
+            throw new Error(`the path ${filePath} can't fetch data from it`);
+        }
+        let data = await response.json();
+        return data;
+    } catch {
+        throw new Error("Error ! 404 page not found")
+    }
+}
