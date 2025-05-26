@@ -42,12 +42,12 @@ document.addEventListener("DOMContentLoaded", () => {
             let carouselItemsData = await fetchData();
             carouselItemsData = carouselItemsData.carouselItems;
             let allItems = [...Object.keys(carouselItemsData)];
+            carouselItems.forEach(function (ele, index) {
+                ele.style.backgroundImage = `url(${carouselItemsData[allItems[index]].bgImg})`;
+                document.querySelectorAll(".carousel-item .game-info img")[index].src = `${carouselItemsData[allItems[index]].gameIcon}`
+                document.querySelectorAll(".carousel-item .game-info h2")[index].innerHTML = `${carouselItemsData[allItems[index]].gameTitle}`
+            })
             setInterval(() => {
-                carouselItems.forEach(function (ele, index) {
-                    ele.style.backgroundImage = `url(${carouselItemsData[allItems[index]].bgImg})`;
-                    document.querySelectorAll(".carousel-item .game-info img")[index].src = `${carouselItemsData[allItems[index]].gameIcon}`
-                    document.querySelectorAll(".carousel-item .game-info h2")[index].innerHTML = `${carouselItemsData[allItems[index]].gameTitle}`
-                })
                 if (window.innerWidth < 992) {
                     document.getElementById("carouselWithCaptions").classList.remove("container");
                 } else {
@@ -62,16 +62,13 @@ document.addEventListener("DOMContentLoaded", () => {
             let trendingGameData = await fetchData();
             trendingGameData = trendingGameData.trendingGames;
             let allItems = [...Object.keys(trendingGameData)];
-            setInterval(() => {
-                trendingGameImg.forEach((ele, index) => {
-                    ele.style.backgroundImage = `url(${trendingGameData[allItems[index]].bgImg})`;
-                    document.querySelectorAll(".trend-section .row .info .stars")[index].innerHTML = `<i class="fa-solid fa-star"></i>${trendingGameData[allItems[index]].stars}`
-                    document.querySelectorAll(".trend-section .row .info .download-count")[index].innerHTML = `<i class="fa-solid fa-download"></i>${trendingGameData[allItems[index]].dowCount}M`
-                    document.querySelectorAll(".trend-section .row .info .game-title")[index].innerHTML = `${trendingGameData[allItems[index]].gameTitle}`;
-                    document.querySelectorAll(".trend-section .row .info .category")[index].innerHTML = `<span>${trendingGameData[allItems[index]].category}</span>`;
-                })
-            }, 500);
-
+            trendingGameImg.forEach((ele, index) => {
+                ele.style.backgroundImage = `url(${trendingGameData[allItems[index]].bgImg})`;
+                document.querySelectorAll(".trend-section .row .info .stars")[index].innerHTML = `<i class="fa-solid fa-star"></i>${trendingGameData[allItems[index]].stars}`
+                document.querySelectorAll(".trend-section .row .info .download-count")[index].innerHTML = `<i class="fa-solid fa-download"></i>${trendingGameData[allItems[index]].dowCount}M`
+                document.querySelectorAll(".trend-section .row .info .game-title")[index].innerHTML = `${trendingGameData[allItems[index]].gameTitle}`;
+                document.querySelectorAll(".trend-section .row .info .category")[index].innerHTML = `<span>${trendingGameData[allItems[index]].category}</span>`;
+            })
         }
         if (loadScreen && header && hero && carouselItems && trendingGameImg) {
             obs.disconnect();
