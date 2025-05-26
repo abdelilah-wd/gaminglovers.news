@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.querySelectorAll(".carousel-item .game-info img")[index].src = `${carouselItemsData[allItems[index]].gameIcon}`
                 document.querySelectorAll(".carousel-item .game-info h2")[index].innerHTML = `${carouselItemsData[allItems[index]].gameTitle}`
             })
+            document.querySelector(".carousel-control-next").click();
             setInterval(() => {
                 if (window.innerWidth < 992) {
                     document.getElementById("carouselWithCaptions").classList.remove("container");
