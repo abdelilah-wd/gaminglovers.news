@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         setUpHomePage(homeData);
     } else if (location.pathname == "/download/last-war") {
         const downloadPageData = await fetchData("/downloadpage.json")
-        setUpDownloadPage(homeData);
+        setUpDownloadPage(downloadPageData[location.pathname]);
     }
 
 })

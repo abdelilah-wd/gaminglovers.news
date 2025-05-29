@@ -1,4 +1,4 @@
-export default function setUpDownloadPage(homeData) {
+export default function setUpDownloadPage(pageData) {
     const loadScreen = document.querySelector(".loader-screen");
     if (loadScreen) {
         console.log("is here");
@@ -31,16 +31,34 @@ export default function setUpDownloadPage(homeData) {
     }
 
     // change carousel-item background
+    let carouselInner = document.querySelector(".carousel-inner");
+    const carouselIndicators = document.querySelector(".carousel-indicators");
     let carouselItems = document.querySelectorAll(".carousel-inner .carousel-item");
     if (carouselItems) {
-        let carouselItemsData = homeData.carouselItems;
-        let allItems = [...Object.keys(carouselItemsData)];
-        carouselItems.forEach(function (ele, index) {
-            ele.style.backgroundImage = `url(${carouselItemsData[allItems[index]].bgImg})`;
-            document.querySelectorAll(".carousel-item .game-info img")[index].src = `${carouselItemsData[allItems[index]].gameIcon}`
-            document.querySelectorAll(".carousel-item .game-info h2")[index].innerHTML = `${carouselItemsData[allItems[index]].gameTitle}`
-            document.querySelectorAll(".carousel-item .dowBtn")[index].href = `${carouselItemsData[allItems[index]].downloadLink}`
-        })
+        for (let i = 0; i < pageData.totalImg; i++) {
+            let carouselItem = document.createElement("div");
+            carouselItem.className = "carousel-item";
+            if (i == 0) carouselItem.classList.add("active");
+            carouselItem.setAttribute("data-bs-interval", "2000");
+            carouselItem.style.backgroundImage = `url(${pageData.imgsPath}${i}.webp)`;
+            carouselInner.appendChild(carouselItem);
+            let indicatorsBtn = document.createElement("button");
+            indicatorsBtn.type = "button";
+            indicatorsBtn.setAttribute("data-bs-target", "#carouselWithCaptions");
+            indicatorsBtn.setAttribute("data-bs-slide-to", `${i}`);
+            indicatorsBtn.setAttribute("aria-label", `Slide ${i + 1}`);
+            if (i === 0) {
+                indicatorsBtn.className = "active";
+                indicatorsBtn.setAttribute("aria-current", "true");
+            }
+            carouselIndicators.appendChild(indicatorsBtn);
+        }
+
+        // let carouselItemsData = pageData.carouselItems;
+        // let allItems = [...Object.keys(carouselItemsData)];
+        // carouselItems.forEach(function (ele, index) {
+        //     ele.style.backgroundImage = `url(${carouselItemsData[allItems[index]].bgImg})`;
+        // })
         // document.querySelector(".carousel-control-next").click();
         setInterval(() => {
             if (window.innerWidth < 992) {

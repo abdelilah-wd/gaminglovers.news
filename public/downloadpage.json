@@ -1,5 +1,6 @@
 {
-    "test obj": {
-        "one": "hello world"
+    "/download/last-war": {
+        "totalImg": 4,
+        "imgsPath": "/assets/images/last-war/"
     }
 }
