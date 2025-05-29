@@ -1,6 +1,7 @@
 export default function setUpDownloadPage(homeData) {
     const loadScreen = document.querySelector(".loader-screen");
     if (loadScreen) {
+        console.log("is here");
         setTimeout(() => {
             loadScreen.remove();
         }, 1000);
