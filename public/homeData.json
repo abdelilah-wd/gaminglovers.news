@@ -4,7 +4,7 @@
             "bgImg": "/assets/images/home-bg-1.jpg",
             "gameIcon": "/assets/images/last-war.webp",
             "gameTitle": "Last War",
-            "download-link": "/download/monpoly-go"
+            "downloadLink": "/download/last-war"
         },
         "carouselTwo": {
             "bgImg": "/assets/images/home-bg-2.jpg",
@@ -25,28 +25,32 @@
             "stars": "5",
             "dowCount": "4.5",
             "gameTitle": "Last War",
-            "category": "action"
+            "category": "action",
+            "downloadLink": "/download/gamesforme"
         },
         "gameTwo": {
             "bgImg": "/assets/images/last-war.webp",
             "stars": "5",
             "dowCount": "4.5",
             "gameTitle": "Last War",
-            "category": "action"
+            "category": "action",
+            "downloadLink": "/download/gamesforme"
         },
         "gameThree": {
             "bgImg": "/assets/images/last-war.webp",
             "stars": "5",
             "dowCount": "4.5",
             "gameTitle": "Last War",
-            "category": "action"
+            "category": "action",
+            "downloadLink": "/download/gamesforme"
         },
         "gameFour": {
             "bgImg": "/assets/images/last-war.webp",
             "stars": "5",
             "dowCount": "4.5",
             "gameTitle": "Last War",
-            "category": "action"
+            "category": "action",
+            "downloadLink": "/download/gamesforme"
         }
     }
 }

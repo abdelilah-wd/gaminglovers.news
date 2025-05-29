@@ -1,44 +1,48 @@
-let routes = {
-    '/home': {
-        path: "/html/home.html",
-        pageDesc: "Discover the best games in the USA and across the globe with Gaming Lovers. we bring you game reviews, in-game top-ups, exclusive gift cards, free game downloads, and premium digital services—all in one platform. Elevate your gaming experience with curated recommendations and unbeatable deals!",
-        title: "Gaming Lovers: Your Gateway to Top Games Worldwide",
-        pageIcon: "",
-    },
-    '/download/monpoly-go': {
-        path: "/html/mediafire-page.html",
-        title: "Download Monopoly Go",
-        pageDesc: "Download Monopoly Go Game For Free",
-        pageIcon: "/assets/icons/monopoly-go.icon"
+let app = document.getElementById("app");
+let links = document.querySelectorAll("a");
+
+links.forEach(ele => {
+    ele.addEventListener("click", event => {
+        event.preventDefault();
+    })
+})
+
+async function loadPage(page) {
+    let routeFile = "/routes.json";
+    try {
+        let response = await fetch(routeFile);
+        if (!response.ok) throw new Error(`can't fetching data from ${routeFile}...`);
+        let data = await response.json();
+        let route = data[page] || data["/home"];
+        if (route.path !== location.pathname) history.pushState({}, "", "/home");
+        let htmlResponse = await fetch(route.filePath);
+        let html = await htmlResponse.text();
+        app.innerHTML = html;
+        return data;
+    } catch {
+        throw new Error("Error ! 404 page not found")
     }
 }
 
-let app = document.getElementById("app");
-let links = document.querySelectorAll("a");
-links.forEach(ele => {
-    ele.addEventListener("click", event => {
-        event.preventDefault() ;
-    })
-})
-async function loadPage(page) {
-    let route = routes[page] || routes["/home"];
-    console.log(page);
-    let response = await fetch(route.path);
-    let html = await response.text();
+function setUpPage(page, html, pageInfo) {
     app.innerHTML = html;
-    setUpPage(page, html);
-}
-
-function setUpPage(page, html) {
-    app.innerHTML = html;
+    document.querySelectorAll("script[type=module]")[2].src = pageInfo.script;
     const Observe = new MutationObserver((mutations, obs) => {
-
+        const downloadBtn = document.querySelector(".input.popsok");
+        if (downloadBtn) {
+            console.log("element is finded")
+            downloadBtn.href = `${pageInfo.downloadGameLink}`;
+            downloadBtn.innerHTML = `DOWNLOAD (${pageInfo.gameSize}MB)`;
+        }
+        if (downloadBtn) {
+            obs.disconnect();
+        }
     });
     Observe.observe(document.body, {
         childList: true,
         subtree: true
     })
-    document.head.querySelector("title").innerHTML = routes[page] ? routes[page].title: routes["/home"].title;
+    document.head.querySelector("title").innerHTML = routes[page] ? routes[page].title : routes["/home"].title;
     // document.querySelector("title").innerHTML = routes[page].title;
     // if (page != "/home") {
     //     console.log("is not home page")
@@ -50,8 +54,7 @@ function setUpPage(page, html) {
 
 function onNavClick(event) {
     if (event.target.matches("[data-link]")) {
-        console.log("is pressed it");
-        event.preventDefault();
+        // event.preventDefault();
         const path = event.target.getAttribute("href");
         history.pushState({}, "", path);
         loadPage(path);
