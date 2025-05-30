@@ -33,8 +33,7 @@ export default function setUpDownloadPage(pageData) {
         // change carousel-item background
         const carouselInner = document.querySelector(".carousel-inner");
         const carouselIndicators = document.querySelector(".carousel-indicators");
-        let carouselItems = document.querySelectorAll(".carousel-inner .carousel-item");
-        if (carouselItems && carouselIndicators && carouselInner) {
+        if (carouselIndicators && carouselInner) {
             for (let i = 0; i < pageData.totalImg; i++) {
                 let carouselItem = document.createElement("div");
                 carouselItem.className = "carousel-item";
@@ -53,12 +52,6 @@ export default function setUpDownloadPage(pageData) {
                 }
                 carouselIndicators.appendChild(indicatorsBtn);
             }
-
-            // let carouselItemsData = pageData.carouselItems;
-            // let allItems = [...Object.keys(carouselItemsData)];
-            // carouselItems.forEach(function (ele, index) {
-            //     ele.style.backgroundImage = `url(${carouselItemsData[allItems[index]].bgImg})`;
-            // })
             document.querySelector(".carousel-control-next").click();
             setInterval(() => {
                 if (window.innerWidth < 992) {
@@ -67,6 +60,9 @@ export default function setUpDownloadPage(pageData) {
                     document.getElementById("carouselWithCaptions").classList.add("container");
                 }
             }, 500);
+        }
+        if (header && hero && carouselIndicators && carouselInner) {
+            obs.disconnect();
         }
     });
     Observe.observe(document.body, {
