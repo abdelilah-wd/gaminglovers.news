@@ -251,22 +251,29 @@ nav.navbar {
   height: 100%;
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
-  aspect-ratio: 16 / 9 ;
+  background-position: center top;
+  aspect-ratio: 16 / 9;
+  position: relative;
 }
 
 .carousel .carousel-item .carousel-caption {
-  width: 90%;
+  /* width: 100%;
   left: 50%;
-  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%); */
   display: block !important;
+  position: absolute;
+  left: 10%;
+  bottom: 20%;
+  width: fit-content;
 }
+
 
 .carousel .carousel-item .game-info {
   display: flex;
   align-items: start;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
+  gap: 1rem;
+  margin-bottom: 1rem;
   flex-wrap: wrap;
 }
 
@@ -276,7 +283,6 @@ nav.navbar {
 }
 
 .carousel .carousel-item .game-info h2 {
-  width: 50%;
   text-align: start;
   font-weight: 900;
   font-size: 2rem;
@@ -284,9 +290,24 @@ nav.navbar {
   color: white;
 }
 
-@media (max-width: 587px) {
+/* @media (max-width: 587px) {
   .carousel .carousel-item .game-info h2 {
     width: 100%;
+  }
+} */
+
+@media (max-width: 450px) {
+  .carousel .carousel-item .game-info h2 {
+    font-size: 1.4rem;
+  }
+
+  .carousel .carousel-item .dowBtn {
+    font-size: 13px;
+    padding: 0.8rem 1rem;
+  }
+
+  .carousel .carousel-item .game-info img {
+    width: 70px;
   }
 }
 
