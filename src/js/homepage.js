@@ -1,5 +1,6 @@
 export default function setUpHomePage(homeData) {
     const Observe = new MutationObserver((mutations, obs) => {
+        console.log("observ in download page is working fine");
         const loadScreen = document.querySelector(".loader-screen");
         if (loadScreen) {
             setTimeout(() => {

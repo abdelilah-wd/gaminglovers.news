@@ -1,12 +1,12 @@
 export default function setUpDownloadPage(pageData) {
+    const loadScreen = document.querySelector(".loader-screen");
+    if (loadScreen) {
+        setTimeout(() => {
+            loadScreen.remove();
+        }, 1000);
+    }
     const Observe = new MutationObserver((mutations, obs) => {
-        const loadScreen = document.querySelector(".loader-screen");
-        if (loadScreen) {
-            console.log("is here");
-            setTimeout(() => {
-                loadScreen.remove();
-            }, 1000);
-        }
+        console.log("observ in download page is working fine");
 
         // Create Scrolling Smooth to the Header 
         const header = document.getElementById("navbar");
