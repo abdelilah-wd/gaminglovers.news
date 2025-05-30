@@ -38,7 +38,7 @@ export default function setUpDownloadPage(pageData) {
                 let carouselItem = document.createElement("div");
                 carouselItem.className = "carousel-item";
                 if (i == 0) carouselItem.classList.add("active");
-                carouselItem.setAttribute("data-bs-interval", "2000");
+                carouselItem.setAttribute("data-bs-interval", "3000");
                 carouselItem.style.backgroundImage = `url(${pageData.imgsPath}${i}.webp)`;
                 carouselInner.appendChild(carouselItem);
                 let indicatorsBtn = document.createElement("button");
