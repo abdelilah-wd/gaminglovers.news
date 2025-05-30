@@ -13,7 +13,7 @@ export default function setUpDownloadPage(pageData) {
     if (header && hero) {
         window.addEventListener("scroll", () => {
             const heroBottom = hero.getBoundingClientRect().bottom;
-            if (heroBottom <= 400 && heroBottom > 0) {
+            if (heroBottom <= 250 && heroBottom > 0) {
                 header.classList.add("in-middle")
                 header.classList.remove("in-bottom");
                 header.classList.remove("in-top");
