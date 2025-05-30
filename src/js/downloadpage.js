@@ -31,10 +31,10 @@ export default function setUpDownloadPage(pageData) {
     }
 
     // change carousel-item background
-    let carouselInner = document.querySelector(".carousel-inner");
+    const carouselInner = document.querySelector(".carousel-inner");
     const carouselIndicators = document.querySelector(".carousel-indicators");
     let carouselItems = document.querySelectorAll(".carousel-inner .carousel-item");
-    if (carouselItems) {
+    if (carouselItems && carouselIndicators) {
         for (let i = 0; i < pageData.totalImg; i++) {
             let carouselItem = document.createElement("div");
             carouselItem.className = "carousel-item";
@@ -67,5 +67,7 @@ export default function setUpDownloadPage(pageData) {
                 document.getElementById("carouselWithCaptions").classList.add("container");
             }
         }, 500);
+    } else {
+        setUpDownloadPage(pageData);
     }
 }
