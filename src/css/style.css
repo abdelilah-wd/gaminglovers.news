@@ -191,8 +191,10 @@ nav.navbar {
 }
 
 /* End Header Section */
-.carousel {
-  max-width: 100%;
+@media (max-width: 1200px) {
+  .carousel {
+    top: 65px;
+  }
 }
 
 .carousel .carousel-indicators {
@@ -205,24 +207,42 @@ nav.navbar {
 
 .carousel .carousel-inner {
   width: 100%;
-  height: calc(109vh - 65px);
+  height: calc(100vh - 65px);
 }
 
 @media (max-width: 1300px) {
   .carousel .carousel-inner {
-    height: calc(100vh - 65px);
+    height: calc(90vh - width)
   }
 }
 
 @media (max-width: 1200px) {
   .carousel .carousel-inner {
-    height: calc(90vh - 65px);
+    height: calc(80vh - 65px);
+  }
+}
+
+@media (max-width: 992px) {
+  .carousel .carousel-inner {
+    height: calc(70vh - 65px);
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel .carousel-inner {
+    height: calc(60vh - 65px);
   }
 }
 
 @media (max-width :587px) {
   .carousel .carousel-inner {
-    height: calc(60vh - 65px);
+    height: calc(50vh - 65px);
+  }
+}
+
+@media (max-width :450px) {
+  .carousel .carousel-inner {
+    height: calc(40vh - 65px);
   }
 }
 
