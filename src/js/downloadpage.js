@@ -59,7 +59,7 @@ export default function setUpDownloadPage(pageData) {
         // carouselItems.forEach(function (ele, index) {
         //     ele.style.backgroundImage = `url(${carouselItemsData[allItems[index]].bgImg})`;
         // })
-        // document.querySelector(".carousel-control-next").click();
+        document.querySelector(".carousel-control-next").click();
         setInterval(() => {
             if (window.innerWidth < 992) {
                 document.getElementById("carouselWithCaptions").classList.remove("container");
