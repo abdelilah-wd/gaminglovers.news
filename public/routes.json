@@ -2,9 +2,9 @@
     "/home": {
         "path": "/home",
         "filePath": "/html/home.html",
-        "pageDesc": "Discover the best games in the USA and across the globe with Gaming Lovers. we bring you game reviews, in-game top-ups, exclusive gift cards, free game downloads, and premium digital services—all in one platform. Elevate your gaming experience with curated recommendations and unbeatable deals!",
+        "pageDesc": "Gaming Lovers Discover the best games in the USA and across the globe with Gaming Lovers. we bring you game reviews, in-game top-ups, exclusive gift cards, free game downloads, and premium digital services—all in one platform. Elevate your gaming experience with curated recommendations and unbeatable deals!",
         "title": "Gaming Lovers: Your Gateway to Top Games Worldwide",
-        "pageIcon": ""
+        "pageIcon": "/assets/icons/brand.ico"
     },
     "/MediaFire/monopoly-go": {
         "path": "/MediaFire/monopoly-go",
@@ -22,7 +22,7 @@
         "filePath": "/html/mediafire-page.html",
         "pageDesc": "Download last war game for free",
         "title": "Download Last War Mode",
-        "pageIcon": "/assets/icons/monopoly-go.ico",
+        "pageIcon": "/assets/icons/last-war.ico",
         "downloadLink": "https://appslocked.com/cl/i/g6ome1",
         "gameImage": "/assets/images/last-war/logo.webp",
         "gameName": "Last War:",
