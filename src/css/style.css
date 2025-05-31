@@ -222,7 +222,7 @@ nav.navbar {
   position: relative;
 }
 
-.download-content .carousel .carousel-item::before {
+.carousel .carousel-item::before {
   content: "";
   display: block;
   width: 100%;
@@ -230,15 +230,15 @@ nav.navbar {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 99;
+  z-index: 1;
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-@media (max-width: 992px) {
-  .download-content .carousel .carousel-item::before {
+/* @media (max-width: 992px) {
+  .carousel .carousel-item::before {
     display: none;
   }
-}
+} */
 
 .carousel .carousel-item .carousel-caption {
   display: block !important;
@@ -246,6 +246,7 @@ nav.navbar {
   left: 10%;
   bottom: 20%;
   width: fit-content;
+  z-index: 100;
 }
 
 

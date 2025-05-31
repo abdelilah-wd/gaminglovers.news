@@ -1,56 +1,34 @@
 {
     "carouselItems": {
         "last-war": {
-            "bgImg": "/assets/images/home-bg-1.jpg",
+            "bgImg": "/assets/images/last-war/bg.webp",
             "gameIcon": "/assets/images/last-war/logo.webp",
-            "gameTitle": "Last War",
+            "gameTitle": "Last War:Survival",
             "downloadLink": "/MediaFire/last-war"
         },
         "monpoly-go": {
-            "bgImg": "/assets/images/home-bg-2.jpg",
+            "bgImg": "/assets/images/monopoly-go/bg.jpg",
             "gameIcon": "/assets/images/monopoly-go/logo.webp",
-            "gameTitle": "Free Fire",
+            "gameTitle": "Monopoly Go",
             "downloadLink": "/MediaFire/monopoly-go"
-        },
-        "carouselThree": {
-            "bgImg": "/assets/images/home-bg-3.jpg",
-            "gameIcon": "/assets/images/last-war/logo.webp",
-            "gameTitle": "Pubge",
-            "downloadLink": "/MediaFire/monpoly-go"
         }
     },
     "trendingGames": {
-        "gameOne": {
+        "last-war": {
             "bgImg": "/assets/images/last-war/logo.webp",
             "stars": "5",
             "dowCount": "4.5",
-            "gameTitle": "Last War",
+            "gameTitle": "Last War:Survival ",
             "category": "action",
-            "downloadLink": "/MediaFire/gamesforme"
+            "downloadLink": "/MediaFire/last-war"
         },
-        "gameTwo": {
-            "bgImg": "/assets/images/last-war/logo.webp",
+        "monopoly-go": {
+            "bgImg": "/assets/images/monopoly-go/logo.webp",
             "stars": "5",
             "dowCount": "4.5",
-            "gameTitle": "Last War",
+            "gameTitle": "Monopoly Go",
             "category": "action",
-            "downloadLink": "/MediaFire/gamesforme"
-        },
-        "gameThree": {
-            "bgImg": "/assets/images/last-war/logo.webp",
-            "stars": "5",
-            "dowCount": "4.5",
-            "gameTitle": "Last War",
-            "category": "action",
-            "downloadLink": "/MediaFire/gamesforme"
-        },
-        "gameFour": {
-            "bgImg": "/assets/images/last-war/logo.webp",
-            "stars": "5",
-            "dowCount": "4.5",
-            "gameTitle": "Last War",
-            "category": "action",
-            "downloadLink": "/MediaFire/gamesforme"
+            "downloadLink": "/MediaFire/monopoly-go"
         }
     }
 }

@@ -34,17 +34,38 @@ export default function setUpHomePage(homeData) {
             });
         }
 
-        // change carousel-item background
-        let carouselItems = document.querySelectorAll(".carousel-inner .carousel-item");
-        if (carouselItems) {
+        // add carousel Items
+        const carouselInner = document.querySelector(".carousel-inner");
+        const carouselIndicators = document.querySelector(".carousel-indicators");
+        if (carouselInner) {
             let carouselItemsData = homeData.carouselItems;
-            let allItems = [...Object.keys(carouselItemsData)];
-            carouselItems.forEach(function (ele, index) {
-                ele.style.backgroundImage = `url(${carouselItemsData[allItems[index]].bgImg})`;
-                document.querySelectorAll(".carousel-item .game-info img")[index].src = `${carouselItemsData[allItems[index]].gameIcon}`
-                document.querySelectorAll(".carousel-item .game-info h2")[index].innerHTML = `${carouselItemsData[allItems[index]].gameTitle}`
-                document.querySelectorAll(".carousel-item .dowBtn")[index].href = `${carouselItemsData[allItems[index]].downloadLink}`
-            })
+            let allCarouselItems = Object.keys(homeData.carouselItems);
+            for (let i = 0; i < allCarouselItems.length; i++) {
+                let carouselItem = document.createElement("div");
+                carouselItem.className = `carousel-item ${i === 0 ? "active" : ""}`;
+                carouselItem.setAttribute("data-bs-interval", "4000");
+                carouselItem.style.backgroundImage = `url(${carouselItemsData[allCarouselItems[i]].bgImg})`
+                carouselItem.innerHTML = `
+                    <div class="carousel-caption d-none d-md-block">
+                    <div class="game-info">
+                    <img src="${carouselItemsData[allCarouselItems[i]].gameIcon}" alt="">
+                    <h2>${carouselItemsData[allCarouselItems[i]].gameTitle}</h2>
+                    </div>
+                    <a href="${carouselItemsData[allCarouselItems[i]].downloadLink}" class="dowBtn" data-link>Download <i class="fa-solid fa-download"></i></a>
+                    </div>
+                    ` ;
+                carouselInner.appendChild(carouselItem);
+                let IndicatorBtn = document.createElement("button");
+                IndicatorBtn.type = "button";
+                IndicatorBtn.setAttribute("data-bs-target", "#carouselWithCaptions");
+                IndicatorBtn.setAttribute("data-bs-slide-to", `${i}`);
+                if (i === 0) {
+                    IndicatorBtn.className = "active";
+                    IndicatorBtn.setAttribute("aria-current", "true")
+                }
+                IndicatorBtn.setAttribute("aria-label", `Slide ${i + 1}`);
+                carouselIndicators.appendChild(IndicatorBtn);
+            }
             document.querySelector(".carousel-control-next").click();
             setInterval(() => {
                 if (window.innerWidth < 992) {
@@ -55,21 +76,40 @@ export default function setUpHomePage(homeData) {
             }, 500);
         }
 
+
         // Trending Section
-        const trendingGameImg = document.querySelectorAll(".trend-section .row .game-img");
-        if (trendingGameImg) {
-            let trendingGameData = homeData.trendingGames;
-            let allItems = [...Object.keys(trendingGameData)];
-            trendingGameImg.forEach((ele, index) => {
-                ele.style.backgroundImage = `url(${trendingGameData[allItems[index]].bgImg})`;
-                document.querySelectorAll(".trend-section .row .info .stars")[index].innerHTML = `<i class="fa-solid fa-star"></i>${trendingGameData[allItems[index]].stars}`
-                document.querySelectorAll(".trend-section .row .info .download-count")[index].innerHTML = `<i class="fa-solid fa-download"></i>${trendingGameData[allItems[index]].dowCount}M`
-                document.querySelectorAll(".trend-section .row .info .game-title")[index].innerHTML = `${trendingGameData[allItems[index]].gameTitle}`;
-                document.querySelectorAll(".trend-section .row .info .category")[index].innerHTML = `<span>${trendingGameData[allItems[index]].category}</span>`;
-                document.querySelectorAll(".trend-section .row .game-img .download-btn a")[index].href = `${trendingGameData[allItems[index]].downloadLink}`;
-            })
+        const trendingGameSection = document.querySelector(".trend-section .trend-content");
+        if (trendingGameSection) {
+            const trendingGameData = homeData.trendingGames;
+            const allItems = [...Object.keys(trendingGameData)];
+            for (let i = 0; i < allItems.length; i++) {
+                let currentGame = trendingGameData[allItems[i]];
+                const div = document.createElement("div");
+                div.className = "pt-3 pb-3";
+                div.innerHTML = `
+                <div class="content">
+                    <div class="game-img relative" style="background-image: url("${currentGame.bgImg}");">
+                        <div class="download-btn"><a href="${currentGame.downloadLink}">Download</a></div>
+                    </div>
+                    <div class="info">
+                        <div class="top-info d-flex ">
+                            <div class="stars"><i class="fa-solid fa-star"></i>${currentGame.stars}</div>
+                            <div class="download-count"><i class="fa-solid fa-download"></i>${currentGame.dowCount}</div>
+                        </div>
+                        <div class="game-title">
+                            ${currentGame.gameTitle}
+                        </div>
+                        <div class="category pt-2 pb-2 m-0">
+                            <span>${currentGame.category}</span>
+                        </div>
+                    </div>
+                </div>
+                ` ;
+                trendingGameSection.appendChild(div);
+                document.querySelectorAll(".trend-section .row .game-img")[i].style.backgroundImage = `url(${currentGame.bgImg})`
+            }
         }
-        if (loadScreen && header && hero && carouselItems && trendingGameImg) {
+        if (loadScreen && header && hero && carouselInner && trendingGameSection) {
             obs.disconnect();
         }
     });
