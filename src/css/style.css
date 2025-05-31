@@ -410,7 +410,9 @@ nav.navbar {
   border-radius: 10px;
   box-shadow: 0 0 20px #ffffff1f;
 }
-
+.trend-section .row .content:hover .download-btn {
+  transform: translateY(0rem)
+}
 
 .trend-section .row .game-img {
   height: 300px;
