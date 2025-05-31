@@ -26,7 +26,6 @@ async function loadPage(page) {
 }
 
 function setUpPage(pageInfo) {
-    document.head.querySelector("link[rel=stylesheet]").href = pageInfo.style;
     document.head.querySelector("meta[name=description]").content = pageInfo.pageDesc;
     document.head.querySelector("title").innerHTML = pageInfo.title;
     document.head.querySelector("link[rel=icon]").href = pageInfo.pageIcon;
