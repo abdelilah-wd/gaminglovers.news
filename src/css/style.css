@@ -246,7 +246,7 @@ nav.navbar {
   left: 10%;
   bottom: 20%;
   width: fit-content;
-  z-index: 100;
+  z-index: 90;
 }
 
 
