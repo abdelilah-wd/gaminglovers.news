@@ -1,20 +1,22 @@
 export default function setUpHomePage(homeData) {
     const Observe = new MutationObserver((mutations, obs) => {
-        console.log("observ in download page is working fine");
         const loadScreen = document.querySelector(".loader-screen");
         if (loadScreen) {
             setTimeout(() => {
                 loadScreen.remove();
             }, 1000);
+        } else {
+            setTimeout(() => {
+                loadScreen = document.querySelector(".loader-screen");
+                loadScreen.remove();
+            }, 1000);
         }
-
         // Create Scrolling Smooth to the Header 
         const header = document.getElementById("navbar");
         const hero = document.getElementById("carouselWithCaptions");
         if (header && hero) {
             window.addEventListener("scroll", () => {
                 const heroBottom = hero.getBoundingClientRect().bottom;
-                console.log(heroBottom);
                 if (heroBottom <= 250 && heroBottom > 0) {
                     header.classList.add("in-middle")
                     header.classList.remove("in-bottom");

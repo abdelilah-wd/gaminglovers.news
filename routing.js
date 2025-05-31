@@ -18,38 +18,18 @@ async function loadPage(page) {
         let htmlResponse = await fetch(route.filePath);
         let html = await htmlResponse.text();
         app.innerHTML = html;
+        setUpPage(route);
         return data;
     } catch {
         throw new Error("Error ! 404 page not found")
     }
 }
 
-function setUpPage(page, html, pageInfo) {
-    app.innerHTML = html;
-    document.querySelectorAll("script[type=module]")[2].src = pageInfo.script;
-    const Observe = new MutationObserver((mutations, obs) => {
-        const downloadBtn = document.querySelector(".input.popsok");
-        if (downloadBtn) {
-            console.log("element is finded")
-            downloadBtn.href = `${pageInfo.downloadGameLink}`;
-            downloadBtn.innerHTML = `DOWNLOAD (${pageInfo.gameSize}MB)`;
-        }
-        if (downloadBtn) {
-            obs.disconnect();
-        }
-    });
-    Observe.observe(document.body, {
-        childList: true,
-        subtree: true
-    })
-    document.head.querySelector("title").innerHTML = routes[page] ? routes[page].title : routes["/home"].title;
-    // document.querySelector("title").innerHTML = routes[page].title;
-    // if (page != "/home") {
-    //     console.log("is not home page")
-    //     if (document.querySelector('rel["icon"]')) {
-    //         document.querySelector('rel["icon"]').setAttribute("href", routes[page].pageIcon);
-    //     }
-    // }
+function setUpPage(pageInfo) {
+    document.head.querySelector("link[rel=stylesheet]").href = pageInfo.style;
+    document.head.querySelector("meta[name=description]").content = pageInfo.pageDesc;
+    document.head.querySelector("title").innerHTML = pageInfo.title;
+    document.head.querySelector("link[rel=icon]").href = pageInfo.pageIcon;
 }
 
 function onNavClick(event) {

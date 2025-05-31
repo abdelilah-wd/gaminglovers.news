@@ -8,10 +8,10 @@ import setUpDownloadPage from './js/downloadpage';
 document.addEventListener("DOMContentLoaded", async () => {
     const homeData = await fetchData("/homeData.json")
     if (location.pathname == "/home") {
-        console.log(homeData);
         setUpHomePage(homeData);
-    } else if (location.pathname == "/download/last-war") {
-        const downloadPageData = await fetchData("/downloadpage.json")
+    }
+    else if (location.pathname.match(/\/\w+/ig).includes("/MediaFire")) {
+        const downloadPageData = await fetchData("/routes.json")
         setUpDownloadPage(downloadPageData[location.pathname]);
     }
 

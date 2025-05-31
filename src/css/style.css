@@ -30,7 +30,6 @@ html {
 body {
   font-family: "Mulish", sans-serif;
   background-color: var(--main-blue-color);
-  height: 10000px;
 }
 
 ul {
@@ -223,12 +222,25 @@ nav.navbar {
   position: relative;
 }
 
+.download-content .carousel .carousel-item::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 992px) {
+  .download-content .carousel .carousel-item::before {
+    display: none;
+  }
+}
 
 .carousel .carousel-item .carousel-caption {
-  /* width: 100%;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%); */
   display: block !important;
   position: absolute;
   left: 10%;
@@ -257,12 +269,6 @@ nav.navbar {
   text-transform: capitalize;
   color: white;
 }
-
-/* @media (max-width: 587px) {
-  .carousel .carousel-item .game-info h2 {
-    width: 100%;
-  }
-} */
 
 @media (max-width: 450px) {
   .carousel .carousel-item .game-info h2 {
@@ -329,7 +335,7 @@ nav.navbar {
 
   .carousel .carousel-control-next,
   .carousel .carousel-control-prev {
-    /* display: none; */
+    display: none;
   }
 }
 
@@ -527,93 +533,3 @@ nav.navbar {
 }
 
 /* End Trending Section  */
-.download-content .game-info {
-  position: relative;
-}
-
-@media (min-width: 992px) {
-  .download-content .game-info {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -70%);
-    z-index: 100;
-  }
-}
-
-.download-content .game-info .game-img {
-  width: 200px;
-  border-radius: 10px;
-}
-
-.download-content .carousel .carousel-item::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 99;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-@media (max-width: 992px) {
-  .download-content .carousel .carousel-item::before {
-    display: none;
-  }
-}
-
-.download-content .download-info {}
-
-.download-content .download-info>div {
-  padding: 1rem;
-  width: fit-content;
-}
-
-.download-content .download-info>div>div {
-  height: 250px;
-  width: 200px;
-  color: white;
-  border-radius: 10px;
-  box-shadow: 0 0 16px 0px #3a3a3ac4;
-  background: #e53637;
-}
-
-@media (max-width: 992px) {
-  .download-content .download-info>div>div {
-    height: 190px;
-    width: 150px;
-  }
-}
-
-@media (max-width: 380px) {
-  .download-content .download-info>div>div {
-    height: 190px;
-    width: 250px;
-  }
-}
-
-.download-content .download-info>div i {
-  color: var(--main-blue-color);
-  font-size: 100px;
-  margin-bottom: 1rem;
-
-}
-
-@media (max-width: 992px) {
-  .download-content .download-info>div i {
-    font-size: 80px;
-  }
-}
-
-.download-content .download-info>div span {
-
-  text-align: center;
-  color: white;
-  font-size: 20px;
-  font-weight: 800;
-  text-transform: uppercase;
-  font-family: 'Oswald',
-    sans-serif;
-}

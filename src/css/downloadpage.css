@@ -1,0 +1,69 @@
+.download-content .game-info {
+    position: relative;
+}
+
+@media (min-width: 992px) {
+    .download-content .game-info {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -70%);
+        z-index: 100;
+    }
+}
+
+.download-content .game-info .game-img {
+    width: 200px;
+    border-radius: 10px;
+}
+
+.download-content .download-info>div {
+    padding: 1rem;
+    width: fit-content;
+}
+
+.download-content .download-info>div>div {
+    height: 250px;
+    width: 200px;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 16px 0px #3a3a3ac4;
+    background: #e53637;
+}
+
+@media (max-width: 992px) {
+    .download-content .download-info>div>div {
+        height: 190px;
+        width: 150px;
+    }
+}
+
+@media (max-width: 380px) {
+    .download-content .download-info>div>div {
+        height: 190px;
+        width: 250px;
+    }
+}
+
+.download-content .download-info>div i {
+    color: var(--main-blue-color);
+    font-size: 100px;
+    margin-bottom: 1rem;
+
+}
+
+@media (max-width: 992px) {
+    .download-content .download-info>div i {
+        font-size: 80px;
+    }
+}
+
+.download-content .download-info>div span {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-family: 'Oswald',
+        sans-serif;
+}

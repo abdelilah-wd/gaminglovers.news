@@ -4,23 +4,30 @@
         "filePath": "/html/home.html",
         "pageDesc": "Discover the best games in the USA and across the globe with Gaming Lovers. we bring you game reviews, in-game top-ups, exclusive gift cards, free game downloads, and premium digital services—all in one platform. Elevate your gaming experience with curated recommendations and unbeatable deals!",
         "title": "Gaming Lovers: Your Gateway to Top Games Worldwide",
-        "pageIcon": "",
-        "script": "/src/main.js"
+        "pageIcon": ""
     },
-    "/download/monpoly-go": {
-        "path": "/download/monpoly-go",
-        "filePath": "/html/download-page.html",
+    "/MediaFire/monopoly-go": {
+        "path": "/MediaFire/monopoly-go",
+        "filePath": "/html/mediafire-page.html",
         "pageDesc": "Download Monopoly Go Game For Free",
         "title": "Download Monopoly Go",
-        "pageIcon": "/assets/icons/monopoly-go.icon",
-        "script": "/src/main.js"
+        "pageIcon": "/assets/icons/monopoly-go.ico",
+        "style": "/src/css/mediafire-style.css",
+        "downloadLink": "https://installchecker.com/cl/i/dv9d37",
+        "gameImage": "/assets/images/monopoly-go/logo.webp",
+        "gameName": "Monopoly Go",
+        "gameSize": "250MB"
     },
-    "/download/last-war": {
-        "path": "/download/last-war",
-        "filePath": "/html/download-page.html",
+    "/MediaFire/last-war": {
+        "path": "/MediaFire/last-war",
+        "filePath": "/html/mediafire-page.html",
         "pageDesc": "Download last war game for free",
         "title": "Download Last War Mode",
-        "pageIcon": "/assets/icons/monopoly-go.icon",
-        "script": "/src/main.js"
+        "pageIcon": "/assets/icons/monopoly-go.ico",
+        "style": "/src/css/mediafire-style.css",
+        "downloadLink": "https://appslocked.com/cl/i/g6ome1",
+        "gameImage": "/assets/images/last-war/logo.webp",
+        "gameName": "Last War:",
+        "gameSize": "2GB"
     }
 }
