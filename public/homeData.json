@@ -4,13 +4,13 @@
             "bgImg": "/assets/images/last-war/bg.webp",
             "gameIcon": "/assets/images/last-war/logo.webp",
             "gameTitle": "Last War:Survival",
-            "downloadLink": "/MediaFire/last-war"
+            "downloadLink": "/Download/last-war"
         },
         "monpoly-go": {
             "bgImg": "/assets/images/monopoly-go/bg.jpg",
             "gameIcon": "/assets/images/monopoly-go/logo.webp",
             "gameTitle": "Monopoly Go",
-            "downloadLink": "/MediaFire/monopoly-go"
+            "downloadLink": "/Download/monopoly-go"
         }
     },
     "trendingGames": {
@@ -20,7 +20,7 @@
             "dowCount": "4.5",
             "gameTitle": "Last War:Survival ",
             "category": "action",
-            "downloadLink": "/MediaFire/last-war"
+            "downloadLink": "/Download/last-war"
         },
         "monopoly-go": {
             "bgImg": "/assets/images/monopoly-go/logo.webp",
@@ -28,7 +28,7 @@
             "dowCount": "4.5",
             "gameTitle": "Monopoly Go",
             "category": "action",
-            "downloadLink": "/MediaFire/monopoly-go"
+            "downloadLink": "/Download/monopoly-go"
         }
     }
 }
