@@ -12,12 +12,19 @@
             "gameTitle": "Monopoly Go",
             "downloadLink": "/Download/monopoly-go"
         }
+        ,
+        "kingshot": {
+            "bgImg": "/assets/images/kingshot/bg.webp",
+            "gameIcon": "/assets/images/kingshot/logo.webp",
+            "gameTitle": "KingShot",
+            "downloadLink": "/Download/kingshot"
+        }
     },
     "trendingGames": {
         "last-war": {
             "bgImg": "/assets/images/last-war/logo.webp",
             "stars": "5",
-            "dowCount": "4.5",
+            "dowCount": "4.5M",
             "gameTitle": "Last War:Survival ",
             "category": "action",
             "downloadLink": "/Download/last-war"
@@ -29,6 +36,14 @@
             "gameTitle": "Monopoly Go",
             "category": "action",
             "downloadLink": "/Download/monopoly-go"
+        },
+        "kingshot": {
+            "bgImg": "/assets/images/kingshot/logo.webp",
+            "stars": "5",
+            "dowCount": "4.5",
+            "gameTitle": "Kingshot",
+            "category": "action",
+            "downloadLink": "/Download/kingshot"
         }
     }
 }

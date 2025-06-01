@@ -12,30 +12,27 @@ window.addEventListener('popstate', async () => {
     const homeData = await fetchData("/homeData.json")
     const currentPathname = window.location.pathname;
     if (currentPathname !== previousPathname) {
-        if (location.pathname == "/home") {
-            setUpHomePage(homeData);
-        }
-        else if (location.pathname.match(/\/\w+/ig).includes("/Download")) {
+        if (location.pathname.match(/\/\w+/ig).includes("/Download")) {
             const downloadPageData = await fetchData("/routes.json")
             setUpDownloadPage(downloadPageData[location.pathname]);
+        } else {
+            setUpHomePage(homeData);
         }
         previousPathname = currentPathname;
     }
 });
 document.addEventListener("DOMContentLoaded", async () => {
     const homeData = await fetchData("/homeData.json")
+    console.log(location.pathname);
     if (location.pathname != "") {
-        if (location.pathname == "/home") {
-            setUpHomePage(homeData);
-        }
-        else if (location.pathname.match(/\/\w+/ig).includes("/Download")) {
+        if (location.pathname.match(/\/\w+/ig) ? location.pathname.match(/\/\w+/ig).includes("/Download") : false) {
             const downloadPageData = await fetchData("/routes.json")
             setUpDownloadPage(downloadPageData[location.pathname]);
+        } else {
+            setUpHomePage(homeData);
         }
     }
-
 })
-
 async function fetchData(filePath) {
     // let filePath = "/homeData.json";
     try {

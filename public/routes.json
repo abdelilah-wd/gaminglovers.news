@@ -15,7 +15,7 @@
         "downloadLink": "https://installchecker.com/cl/i/dv9d37",
         "gameImage": "/assets/images/monopoly-go/logo.webp",
         "gameName": "Monopoly Go",
-        "gameSize": "250MB"
+        "gameSize": "150MB"
     },
     "/Download/last-war": {
         "path": "/Download/last-war",
@@ -26,6 +26,17 @@
         "downloadLink": "https://appslocked.com/cl/i/g6ome1",
         "gameImage": "/assets/images/last-war/logo.webp",
         "gameName": "Last War:",
+        "gameSize": "2GB"
+    },
+    "/Download/kingshot" : {
+        "path": "/Download/kingshot",
+        "filePath": "/html/mediafire-page.html",
+        "pageDesc": "Download Kingshot game for free",
+        "title": "Download Kingshot",
+        "pageIcon": "/assets/icons/kingshot.ico",
+        "downloadLink": "https://appslocked.com/cl/i/g6ome1",
+        "gameImage": "/assets/images/kingshot/logo.webp",
+        "gameName": "Kingshot:",
         "gameSize": "2GB"
     }
 }

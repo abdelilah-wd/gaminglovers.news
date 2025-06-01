@@ -67,11 +67,13 @@ export default function setUpHomePage(homeData) {
                 carouselIndicators.appendChild(IndicatorBtn);
             }
             document.querySelector(".carousel-control-next").click();
-            if (window.innerWidth < 992) {
-                document.getElementById("carouselWithCaptions").classList.remove("container");
-            } else {
-                document.getElementById("carouselWithCaptions").classList.add("container");
-            }
+            setInterval(() => {
+                if (window.innerWidth < 992) {
+                    document.getElementById("carouselWithCaptions").classList.remove("container");
+                } else {
+                    document.getElementById("carouselWithCaptions").classList.add("container");
+                }
+            }, 500);
         }
 
 
