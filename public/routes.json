@@ -37,6 +37,17 @@
         "downloadLink": "https://installchecker.com/sl/49v3j",
         "gameImage": "/assets/images/kingshot/logo.webp",
         "gameName": "Kingshot:",
-        "gameSize": "2GB"
+        "gameSize": "651 MB"
+    },
+    "/Download/candy-crush-saga": {
+        "path": "/Download/candy-crush-saga",
+        "filePath": "/html/mediafire-page.html",
+        "pageDesc": "Download Candy Crush Saga game for free",
+        "title": "Download Candy Crush Saga",
+        "pageIcon": "/assets/icons/candy-crush-saga.ico",
+        "downloadLink": "https://installchecker.com/sl/49v3j",
+        "gameImage": "/assets/images/candy-crush-saga/logo.webp",
+        "gameName": "Candy Crush Saga",
+        "gameSize": "126 MB"
     }
 }

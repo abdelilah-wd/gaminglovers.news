@@ -394,11 +394,23 @@ nav.navbar {
 
 @media (max-width: 992px) {
   .trend-section .row>div {
+    flex: 0 0 calc(100%/ 3);
+  }
+}
+
+@media (max-width: 767px) {
+  .trend-section .row>div {
     flex: 0 0 calc(100%/ 2);
   }
 }
 
 @media (max-width: 576px) {
+  .trend-section .row>div {
+    flex: 0 0 calc(100%/ 3);
+  }
+}
+
+@media(max-width: 390px) {
   .trend-section .row>div {
     flex: 0 0 80%;
   }
@@ -409,7 +421,9 @@ nav.navbar {
   background: #0000005e;
   border-radius: 10px;
   box-shadow: 0 0 20px #ffffff1f;
+  height: 100%;
 }
+
 .trend-section .row .content:hover .download-btn {
   transform: translateY(0rem)
 }
@@ -432,7 +446,7 @@ nav.navbar {
 
 @media (max-width: 992px) {
   .trend-section .row .game-img {
-    height: 300px;
+    height: 200px;
   }
 }
 
@@ -444,7 +458,13 @@ nav.navbar {
 
 @media (max-width: 576px) {
   .trend-section .row .game-img {
-    height: 230px;
+    height: 140px;
+  }
+}
+
+@media(max-width: 390px) {
+  .trend-section .row .game-img {
+    height: 200px;
   }
 }
 
