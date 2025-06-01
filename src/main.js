@@ -6,6 +6,22 @@ import './css/style.css'
 import setUpHomePage from './js/homepage';
 import setUpDownloadPage from './js/downloadpage';
 
+let previousPathname = window.location.pathname;
+
+window.addEventListener('popstate', async () => {
+    const homeData = await fetchData("/homeData.json")
+    const currentPathname = window.location.pathname;
+    if (currentPathname !== previousPathname) {
+        if (location.pathname == "/home") {
+            setUpHomePage(homeData);
+        }
+        else if (location.pathname.match(/\/\w+/ig).includes("/Download")) {
+            const downloadPageData = await fetchData("/routes.json")
+            setUpDownloadPage(downloadPageData[location.pathname]);
+        }
+        previousPathname = currentPathname;
+    }
+});
 document.addEventListener("DOMContentLoaded", async () => {
     const homeData = await fetchData("/homeData.json")
     if (location.pathname != "") {

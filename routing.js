@@ -14,7 +14,9 @@ async function loadPage(page) {
         if (!response.ok) throw new Error(`can't fetching data from ${routeFile}...`);
         let data = await response.json();
         let route = data[page] || data["/home"];
+        console.log("route changed");
         if (route.path !== location.pathname) history.pushState({}, "", "/home");
+        
         let htmlResponse = await fetch(route.filePath);
         let html = await htmlResponse.text();
         app.innerHTML = html;
@@ -42,4 +44,13 @@ function onNavClick(event) {
 document.addEventListener("DOMContentLoaded", () => {
     document.body.addEventListener("click", onNavClick);
     loadPage(location.pathname);
+});
+let previousPathname = window.location.pathname;
+
+window.addEventListener('popstate', () => {
+    const currentPathname = window.location.pathname;
+    if (currentPathname !== previousPathname) {
+        loadPage(currentPathname);
+        previousPathname = currentPathname;
+    }
 });
