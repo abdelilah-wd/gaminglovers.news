@@ -1,0 +1,62 @@
+{
+    "monopoly-go": {
+        "downloadPage": "/Download/monopoly-go",
+        "filePath": "/html/mediafire-page.html",
+        "pageDesc": "Download Monopoly Go Game For Free",
+        "pageTitle": "Download Monopoly Go",
+        "pageIcon": "/assets/icons/monopoly-go.ico",
+        "downloadLink": "https://installchecker.com/cl/i/dv9d37",
+        "gameImage": "/assets/images/monopoly-go/logo.webp",
+        "bgImg": "/assets/images/last-war/bg.webp",
+        "gameName": "Monopoly Go",
+        "gameSize": "150MB",
+        "stars": "4.7",
+        "dowCount": "50M+",
+        "category": "Board"
+    },
+    "last-war": {
+        "downloadPage": "/Download/last-war",
+        "filePath": "/html/mediafire-page.html",
+        "pageDesc": "Download last war game for free",
+        "pageTitle": "Download Last War Mode",
+        "pageIcon": "/assets/icons/last-war.ico",
+        "downloadLink": "https://installchecker.com/cl/i/g6ome1",
+        "gameImage": "/assets/images/last-war/logo.webp",
+        "bgImg": "/assets/images/last-war/bg.webp",
+        "gameName": "Last War: Survival Game",
+        "gameSize": "2GB",
+        "stars": "4.6",
+        "dowCount": "50M+",
+        "category": "Strategy"
+    },
+    "kingshot": {
+        "downloadPage": "/Download/kingshot",
+        "filePath": "/html/mediafire-page.html",
+        "pageDesc": "Download Kingshot game for free",
+        "pageTitle": "Download Kingshot",
+        "pageIcon": "/assets/icons/kingshot.ico",
+        "downloadLink": "https://installchecker.com/sl/49v3j",
+        "gameImage": "/assets/images/kingshot/logo.webp",
+        "bgImg": "/assets/images/kingshot/bg.webp",
+        "gameName": "Kingshot",
+        "gameSize": "651MB",
+        "stars": "4.6",
+        "dowCount": "5M+",
+        "category": "Strategy"
+    },
+    "candy-crush-saga": {
+        "downloadPage": "/Download/candy-crush-saga",
+        "filePath": "/html/mediafire-page.html",
+        "pageDesc": "Download Candy Crush Saga game for free",
+        "pageTitle": "Download Candy Crush Saga",
+        "pageIcon": "/assets/icons/candy-crush-saga.ico",
+        "downloadLink": "https://installchecker.com/sl/49v3j",
+        "gameImage": "/assets/images/candy-crush-saga/logo.webp",
+        "bgImg": "/assets/images/candy-crush-saga/bg.webp",
+        "gameName": "Candy Crush Saga",
+        "gameSize": "126 MB",
+        "stars": "4.4",
+        "dowCount": "1B+",
+        "category": "Puzzle"
+    }
+}

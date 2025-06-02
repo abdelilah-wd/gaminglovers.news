@@ -12,10 +12,7 @@
         "pageDesc": "Download Monopoly Go Game For Free",
         "title": "Download Monopoly Go",
         "pageIcon": "/assets/icons/monopoly-go.ico",
-        "downloadLink": "https://installchecker.com/cl/i/dv9d37",
-        "gameImage": "/assets/images/monopoly-go/logo.webp",
-        "gameName": "Monopoly Go",
-        "gameSize": "150MB"
+        "gameName": "monopoly-go"
     },
     "/Download/last-war": {
         "path": "/Download/last-war",
@@ -23,10 +20,7 @@
         "pageDesc": "Download last war game for free",
         "title": "Download Last War Mode",
         "pageIcon": "/assets/icons/last-war.ico",
-        "downloadLink": "https://installchecker.com/cl/i/g6ome1",
-        "gameImage": "/assets/images/last-war/logo.webp",
-        "gameName": "Last War:",
-        "gameSize": "2GB"
+        "gameName": "last-war"
     },
     "/Download/kingshot": {
         "path": "/Download/kingshot",
@@ -34,10 +28,7 @@
         "pageDesc": "Download Kingshot game for free",
         "title": "Download Kingshot",
         "pageIcon": "/assets/icons/kingshot.ico",
-        "downloadLink": "https://installchecker.com/sl/49v3j",
-        "gameImage": "/assets/images/kingshot/logo.webp",
-        "gameName": "Kingshot:",
-        "gameSize": "651 MB"
+        "gameName": "kingshot"
     },
     "/Download/candy-crush-saga": {
         "path": "/Download/candy-crush-saga",
@@ -45,9 +36,6 @@
         "pageDesc": "Download Candy Crush Saga game for free",
         "title": "Download Candy Crush Saga",
         "pageIcon": "/assets/icons/candy-crush-saga.ico",
-        "downloadLink": "https://installchecker.com/sl/49v3j",
-        "gameImage": "/assets/images/candy-crush-saga/logo.webp",
-        "gameName": "Candy Crush Saga",
-        "gameSize": "126 MB"
+        "gameName": "candy-crush-saga"
     }
 }

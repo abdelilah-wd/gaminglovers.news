@@ -30,6 +30,7 @@ html {
 body {
   font-family: "Mulish", sans-serif;
   background-color: var(--main-blue-color);
+  height: 10000px;
 }
 
 ul {
@@ -118,6 +119,48 @@ a {
 
 .dowBtn:hover {
   color: white;
+}
+
+.main-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.main-heading h2 {
+  color: white;
+  font-weight: 800;
+  font-family: Oswald, sans-serif;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  padding-left: 15px;
+  position: relative;
+}
+
+.main-heading h2::before {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 32px;
+  left: 0;
+  top: 0;
+  background: var(--main-red-color);
+}
+
+.main-heading a {
+  color: white;
+  font-family: "Source Code Pro", sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.main-heading a i {
+  font-size: 14px;
 }
 
 /* End Component  */
@@ -346,47 +389,6 @@ nav.navbar {
   padding-bottom: var(--main-section-padding);
 }
 
-.trend-section .main-heading {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: white;
-  margin-bottom: 1rem;
-}
-
-.trend-section .main-heading h2 {
-  color: white;
-  font-weight: 800;
-  font-family: Oswald, sans-serif;
-  text-transform: uppercase;
-  font-size: 1.5rem;
-  padding-left: 15px;
-  position: relative;
-}
-
-.trend-section .main-heading h2::before {
-  content: "";
-  position: absolute;
-  width: 7px;
-  height: 32px;
-  left: 0;
-  top: 0;
-  background: var(--main-red-color);
-}
-
-.trend-section .main-heading a {
-  color: white;
-  font-family: "Source Code Pro", sans-serif;
-  text-transform: uppercase;
-  font-size: 15px;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.trend-section .main-heading a i {
-  font-size: 14px;
-}
 
 .trend-section .row>div {
   flex: 0 0 calc(100%/ 4);
@@ -416,7 +418,7 @@ nav.navbar {
   }
 }
 
-.trend-section .row .content {
+.box .content {
   padding: 15px 10px;
   background: #0000005e;
   border-radius: 10px;
@@ -424,11 +426,11 @@ nav.navbar {
   height: 100%;
 }
 
-.trend-section .row .content:hover .download-btn {
+.box .content:hover .download-btn {
   transform: translateY(0rem)
 }
 
-.trend-section .row .game-img {
+.box .game-img {
   height: 300px;
   /* background-image: url(/assets/images/last-war.webp); */
   background-size: cover;
@@ -439,40 +441,40 @@ nav.navbar {
 }
 
 @media (max-width: 1200px) {
-  .trend-section .row .game-img {
+  .box .game-img {
     height: 200px;
   }
 }
 
 @media (max-width: 992px) {
-  .trend-section .row .game-img {
+  .box .game-img {
     height: 200px;
   }
 }
 
 @media (max-width: 767px) {
-  .trend-section .row .game-img {
+  .box .game-img {
     height: 230px;
   }
 }
 
 @media (max-width: 576px) {
-  .trend-section .row .game-img {
+  .box .game-img {
     height: 140px;
   }
 }
 
 @media(max-width: 390px) {
-  .trend-section .row .game-img {
+  .box .game-img {
     height: 200px;
   }
 }
 
-.trend-section .row .game-img:hover .download-btn {
+.box .game-img:hover .download-btn {
   transform: translateY(0rem)
 }
 
-.trend-section .row .game-img .download-btn {
+.box .game-img .download-btn {
   width: 100%;
   height: 100%;
   background: #000000ba;
@@ -483,7 +485,7 @@ nav.navbar {
   transform: translateY(30rem)
 }
 
-.trend-section .row .game-img .download-btn a {
+.box .game-img .download-btn a {
   display: block;
   padding: 0.5rem 1rem;
   border: 2px solid var(--main-red-color);
@@ -499,13 +501,13 @@ nav.navbar {
   transition: var(--main-transition-duration);
 }
 
-.trend-section .row .info .download-btn a:hover {
+.box .info .download-btn a:hover {
   border: 2px solid var(--main-red-color);
   background-color: transparent;
   color: var(--main-red-color);
 }
 
-.trend-section .row .info .top-info {
+.box  .info .top-info {
   width: 100%;
   display: flex;
   align-items: center;
@@ -515,8 +517,8 @@ nav.navbar {
   color: white;
 }
 
-.trend-section .row .info .top-info .stars,
-.trend-section .row .info .top-info .download-count {
+.box .info .top-info .stars,
+.box .info .top-info .download-count {
   padding: 1px 14px;
   background: var(--scondry-gray-color);
   border-radius: 5px;
@@ -527,11 +529,19 @@ nav.navbar {
   gap: 0.4rem;
 }
 
-.trend-section .info .top-info i {
+@media(max-width: 576px) {
+
+  .box .info .top-info .stars,
+  .box .info .top-info .download-count {
+    padding: 1px 10px;
+  }
+}
+
+.box .info .top-info i {
   font-size: 11px;
 }
 
-.trend-section .info .category {
+.box .info .category {
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -539,7 +549,7 @@ nav.navbar {
   margin: 0.5rem 0;
 }
 
-.trend-section .info .category span {
+.box .info .category span {
   color: white;
   font-size: 11px;
   padding: 1px 6px;
@@ -548,7 +558,7 @@ nav.navbar {
   font-weight: 700;
 }
 
-.trend-section .info .game-title {
+.box .info .game-title {
   font-weight: 700;
   font-size: 18px;
   margin-bottom: 0.5rem;
@@ -556,3 +566,18 @@ nav.navbar {
 }
 
 /* End Trending Section  */
+/* Start Category Section  */
+.category-section {}
+.dropdown-toggle::after {
+  margin-left: 0;
+  border-top: 0.4em solid;
+  border-right: .4em solid transparent;
+  border-left: .4em solid transparent;
+}
+.category-section .dropdown-menu {
+  background: var(--main-red-color);
+  padding: 10px 5px;
+  width: 200px;
+}
+
+/* End Category Section  */

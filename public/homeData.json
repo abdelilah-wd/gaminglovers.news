@@ -1,56 +1,9 @@
 {
-    "carouselItems": {
-        "last-war": {
-            "bgImg": "/assets/images/last-war/bg.webp",
-            "gameIcon": "/assets/images/last-war/logo.webp",
-            "gameTitle": "Last War:Survival",
-            "downloadLink": "/Download/last-war"
-        },
-        "monpoly-go": {
-            "bgImg": "/assets/images/monopoly-go/bg.jpg",
-            "gameIcon": "/assets/images/monopoly-go/logo.webp",
-            "gameTitle": "Monopoly Go",
-            "downloadLink": "/Download/monopoly-go"
-        },
-        "kingshot": {
-            "bgImg": "/assets/images/kingshot/bg.webp",
-            "gameIcon": "/assets/images/kingshot/logo.webp",
-            "gameTitle": "KingShot",
-            "downloadLink": "/Download/kingshot"
-        }
-    },
-    "trendingGames": {
-        "last-war": {
-            "bgImg": "/assets/images/last-war/logo.webp",
-            "stars": "4.6",
-            "dowCount": "50M+",
-            "gameTitle": "Last War: Survival Game",
-            "category": "Strategy",
-            "downloadLink": "/Download/last-war"
-        },
-        "monopoly-go": {
-            "bgImg": "/assets/images/monopoly-go/logo.webp",
-            "stars": "4.7",
-            "dowCount": "50M+",
-            "gameTitle": "Monopoly GO!",
-            "category": "Board",
-            "downloadLink": "/Download/monopoly-go"
-        },
-        "kingshot": {
-            "bgImg": "/assets/images/kingshot/logo.webp",
-            "stars": "4.6",
-            "dowCount": "5M+",
-            "gameTitle": "Kingshot",
-            "category": "Strategy",
-            "downloadLink": "/Download/kingshot"
-        },
-        "candy-crush-saga": {
-            "bgImg": "/assets/images/candy-crush-saga/logo.webp",
-            "stars": "4.4",
-            "dowCount": "1B+",
-            "gameTitle": "Kingshot",
-            "category": "Puzzle",
-            "downloadLink": "/Download/candy-crush-saga"
-        }
+    "carouselItems": ["last-war", "monopoly-go", "kingshot"],
+    "trendingGames": ["last-war", "monopoly-go", "kingshot", "candy-crush-saga"],
+    "categorys": {
+        "startegy": ["last-war", "kingshot"],
+        "board": ["monopoly-go"],
+        "puzzle": ["candy-crush-saga"]
     }
 }

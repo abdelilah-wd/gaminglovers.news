@@ -1,16 +1,17 @@
-export default function setUpHomePage(homeData) {
+export default function setUpHomePage(homeData, allGames) {
+    let loadScreen = document.querySelector(".loader-screen");
+    if (loadScreen) {
+        setTimeout(() => {
+            loadScreen.remove();
+        }, 1000);
+    } else {
+        setTimeout(() => {
+            loadScreen = document.querySelector(".loader-screen");
+            if (loadScreen) loadScreen.remove();
+        }, 1000);
+    }
+
     const Observe = new MutationObserver((mutations, obs) => {
-        const loadScreen = document.querySelector(".loader-screen");
-        if (loadScreen) {
-            setTimeout(() => {
-                loadScreen.remove();
-            }, 1000);
-        } else {
-            setTimeout(() => {
-                loadScreen = document.querySelector(".loader-screen");
-                loadScreen.remove();
-            }, 1000);
-        }
         // Create Scrolling Smooth to the Header 
         const header = document.getElementById("navbar");
         const hero = document.getElementById("carouselWithCaptions");
@@ -38,20 +39,20 @@ export default function setUpHomePage(homeData) {
         const carouselInner = document.querySelector(".carousel-inner");
         const carouselIndicators = document.querySelector(".carousel-indicators");
         if (carouselInner) {
-            let carouselItemsData = homeData.carouselItems;
-            let allCarouselItems = Object.keys(homeData.carouselItems);
+            let allCarouselItems = homeData.carouselItems;
             for (let i = 0; i < allCarouselItems.length; i++) {
+                let currentCarouselItem = allGames[allCarouselItems[i]];
                 let carouselItem = document.createElement("div");
                 carouselItem.className = `carousel-item ${i === 0 ? "active" : ""}`;
                 carouselItem.setAttribute("data-bs-interval", "4000");
-                carouselItem.style.backgroundImage = `url(${carouselItemsData[allCarouselItems[i]].bgImg})`
+                carouselItem.style.backgroundImage = `url(${currentCarouselItem.bgImg})`
                 carouselItem.innerHTML = `
                     <div class="carousel-caption d-none d-md-block">
                     <div class="game-info">
-                    <img src="${carouselItemsData[allCarouselItems[i]].gameIcon}" alt="">
-                    <h2>${carouselItemsData[allCarouselItems[i]].gameTitle}</h2>
+                    <img src="${currentCarouselItem.gameImage}" alt="">
+                    <h2>${currentCarouselItem.gameName}</h2>
                     </div>
-                    <a href="${carouselItemsData[allCarouselItems[i]].downloadLink}" class="dowBtn" data-link>Download <i class="fa-solid fa-download"></i></a>
+                    <a href="${currentCarouselItem.downloadPage}" class="dowBtn" data-link>Download <i class="fa-solid fa-download"></i></a>
                     </div>
                     ` ;
                 carouselInner.appendChild(carouselItem);
@@ -67,29 +68,31 @@ export default function setUpHomePage(homeData) {
                 carouselIndicators.appendChild(IndicatorBtn);
             }
             document.querySelector(".carousel-control-next").click();
-            setInterval(() => {
-                if (window.innerWidth < 992) {
-                    document.getElementById("carouselWithCaptions").classList.remove("container");
-                } else {
-                    document.getElementById("carouselWithCaptions").classList.add("container");
-                }
-            }, 500);
+            if (document.getElementById("carouselWithCaptions")) {
+                let interval = setInterval(() => {
+                    if (window.innerWidth < 992) {
+                        document.getElementById("carouselWithCaptions").classList.remove("container");
+                    } else {
+                        document.getElementById("carouselWithCaptions").classList.add("container");
+                    }
+                    if (location.pathname !== "/home") clearInterval(interval);
+                }, 500);
+            }
         }
 
 
         // Trending Section
         const trendingGameSection = document.querySelector(".trend-section .trend-content");
         if (trendingGameSection) {
-            const trendingGameData = homeData.trendingGames;
-            const allItems = [...Object.keys(trendingGameData)];
-            for (let i = 0; i < allItems.length; i++) {
-                let currentGame = trendingGameData[allItems[i]];
+            const allTrendingGames = homeData.trendingGames;
+            for (let i = 0; i < allTrendingGames.length; i++) {
+                let currentGame = allGames[allTrendingGames[i]];
                 const div = document.createElement("div");
-                div.className = "pt-3 pb-3";
+                div.className = "box pt-3 pb-3";
                 div.innerHTML = `
                 <div class="content">
-                    <div class="game-img relative" style="background-image: url("${currentGame.bgImg}");">
-                        <div class="download-btn"><a href="${currentGame.downloadLink}">Download</a></div>
+                    <div class="game-img relative">
+                        <div class="download-btn"><a href="${currentGame.downloadPage}">Download</a></div>
                     </div>
                     <div class="info">
                         <div class="top-info d-flex ">
@@ -97,7 +100,7 @@ export default function setUpHomePage(homeData) {
                             <div class="download-count"><i class="fa-solid fa-download"></i>${currentGame.dowCount}</div>
                         </div>
                         <div class="game-title">
-                            ${currentGame.gameTitle}
+                            ${currentGame.gameName}
                         </div>
                         <div class="category pt-2 pb-2 m-0">
                             <span>${currentGame.category}</span>
@@ -106,10 +109,26 @@ export default function setUpHomePage(homeData) {
                 </div>
                 ` ;
                 trendingGameSection.appendChild(div);
-                document.querySelectorAll(".trend-section .row .game-img")[i].style.backgroundImage = `url(${currentGame.bgImg})`
+                document.querySelectorAll(".trend-section .row .game-img")[i].style.backgroundImage = `url(${currentGame.gameImage})`
             }
         }
-        if (loadScreen && header && hero && carouselInner && trendingGameSection) {
+
+        // Category Section
+        const categorySection = document.querySelector(".category-section");
+        if (categorySection) {
+            let allCategorys = Object.keys(homeData.categorys);
+            const dropdownMenu = document.querySelector(".dropdown-menu");
+            for (let i = 0; i < allCategorys.length; i++) {
+                let li = document.createElement("li");
+                li.innerHTML = `
+                    <a class="dropdown-item" data-category="${allCategorys[i]}" href="#">${allCategorys[i].toUpperCase()}</a>
+                ` ;
+                dropdownMenu.appendChild(li);
+            }
+            setUpCategory(allGames);
+
+        }
+        if (header && hero && carouselInner && trendingGameSection && categorySection) {
             obs.disconnect();
         }
     });
@@ -117,4 +136,37 @@ export default function setUpHomePage(homeData) {
         childList: true,
         subtree: true
     })
+}
+
+export function setUpCategory(allGames) {
+    let categoryContent = document.querySelector(".category-content");
+    categoryContent.innerHTML = "";
+    let allcategoryGames = Object.keys(allGames);
+    for (let i = 0; i < allcategoryGames.length; i++) {
+        let currentGame = allGames[allcategoryGames[i]];
+        const div = document.createElement("div");
+        div.className = "box col-lg-3 col-md-4 col-6 pt-3 pb-3";
+        div.innerHTML = `
+        <div class="content">
+            <div class="game-img relative">
+                <div class="download-btn"><a href="${currentGame.downloadPage}">Download</a></div>
+            </div>
+            <div class="info">
+                <div class="top-info d-flex ">
+                    <div class="stars"><i class="fa-solid fa-star"></i>${currentGame.stars}</div>
+                    <div class="download-count"><i class="fa-solid fa-download"></i>${currentGame.dowCount}</div>
+                </div>
+                <div class="game-title">
+                    ${currentGame.gameName}
+                </div>
+                <div class="category pt-2 pb-2 m-0">
+                    <span>${currentGame.category}</span>
+                </div>
+            </div>
+        </div>
+        ` ;
+        categoryContent.appendChild(div);
+        document.querySelectorAll(".category-content .box .game-img")[i].style.backgroundImage = `url(${currentGame.gameImage})`
+    }
+
 }
