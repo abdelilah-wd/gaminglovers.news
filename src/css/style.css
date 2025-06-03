@@ -163,6 +163,10 @@ a {
   font-size: 14px;
 }
 
+.main-heading .view-mode i {
+  font-size: 22px;
+}
+
 /* End Component  */
 /* Start Header Section */
 nav.navbar {
@@ -389,6 +393,9 @@ nav.navbar {
   padding-bottom: var(--main-section-padding);
 }
 
+.list-mode {
+  /* flex-direction: column; */
+}
 
 .trend-section .row>div {
   flex: 0 0 calc(100%/ 4);
@@ -426,13 +433,22 @@ nav.navbar {
   height: 100%;
 }
 
+.list-mode .box {
+  /* width: 100% !important; */
+}
+
+.list-mode .box .content {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+}
+
 .box .content:hover .download-btn {
   transform: translateY(0rem)
 }
 
 .box .game-img {
   height: 300px;
-  /* background-image: url(/assets/images/last-war.webp); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -440,34 +456,51 @@ nav.navbar {
   border-radius: 10px;
 }
 
+.list-mode .box .game-img {
+  height: 120px;
+  width: 120px;
+}
+
 @media (max-width: 1200px) {
   .box .game-img {
     height: 200px;
   }
+
+  /*  */
+  /*  */
+  .list-mode .box .game-img {}
 }
 
 @media (max-width: 992px) {
   .box .game-img {
     height: 200px;
   }
+
+  .list-mode .box .game-img {}
 }
 
 @media (max-width: 767px) {
   .box .game-img {
     height: 230px;
   }
+
+  .list-mode .box .game-img {}
 }
 
 @media (max-width: 576px) {
   .box .game-img {
     height: 140px;
   }
+
+  .list-mode .box .game-img {}
 }
 
 @media(max-width: 390px) {
   .box .game-img {
     height: 200px;
   }
+
+  .list-mode .box .game-img {}
 }
 
 .box .game-img:hover .download-btn {
@@ -507,7 +540,7 @@ nav.navbar {
   color: var(--main-red-color);
 }
 
-.box  .info .top-info {
+.box .info .top-info {
   width: 100%;
   display: flex;
   align-items: center;
@@ -568,12 +601,14 @@ nav.navbar {
 /* End Trending Section  */
 /* Start Category Section  */
 .category-section {}
+
 .dropdown-toggle::after {
   margin-left: 0;
   border-top: 0.4em solid;
   border-right: .4em solid transparent;
   border-left: .4em solid transparent;
 }
+
 .category-section .dropdown-menu {
   background: var(--main-red-color);
   padding: 10px 5px;

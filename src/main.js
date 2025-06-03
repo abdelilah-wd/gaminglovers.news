@@ -41,6 +41,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (allCategory) {
             allCategory.forEach((ele) => {
                 ele.addEventListener("click", event => {
+                    console.log(document.querySelector(".view-title").innerHTML);
+                    document.querySelector(".view-title").innerHTML = event.target.dataset.category
                     event.preventDefault();
                     if (event.target.dataset.category === "all") {
                         setUpCategory(allGames);
@@ -51,7 +53,11 @@ document.addEventListener("DOMContentLoaded", async () => {
                         for (let i = 0; i < allItems.length; i++) {
                             let currentGame = allGames[allItems[i]];
                             const div = document.createElement("div");
-                            div.className = "box col-lg-3 col-md-4 col-6 pt-3 pb-3";
+                            if (categoryContent.classList.contains("list-mode"))
+                                div.className = "box col-lg-6 col-md-12 col-12 pt-2 pb-2";
+                            else {
+                                div.className = "box col-lg-3 col-md-4 col-6 pt-2 pb-2";
+                            };
                             div.innerHTML = `
                             <div class="content">
                                 <div class="game-img relative">
@@ -78,6 +84,22 @@ document.addEventListener("DOMContentLoaded", async () => {
                 })
             })
         }
+        const categoryViewBtn = document.querySelector(".view-mode");
+        if (categoryViewBtn) {
+            const categoryContent = document.querySelector(".category-content");
+            categoryViewBtn.addEventListener("click", event => {
+                const allElement = document.querySelectorAll(".category-content .box");
+                event.preventDefault();
+                categoryContent.classList.toggle("list-mode")
+                document.querySelector(".view-mode .list-icon").classList.toggle("d-none");
+                document.querySelector(".view-mode .box-icon").classList.toggle("d-none");
+                if (categoryContent.classList.contains("list-mode")) {
+                    allElement.forEach(ele => ele.className = "box col-lg-6 col-md-12 col-12 pt-2 pb-2");
+                } else {
+                    allElement.forEach(ele => ele.className = "box col-lg-3 col-md-4 col-6 pt-2 pb-2");
+                }
+            })
+        }
         if (allCategory) obs.disconnect();
     });
     observe.observe(document.body, {
@@ -86,6 +108,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     })
 
 })
+
+function setUpCategorySection() {
+
+}
+
 
 async function fetchData(filePath) {
     // let filePath = "/homeData.json";

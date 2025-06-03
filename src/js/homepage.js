@@ -145,7 +145,11 @@ export function setUpCategory(allGames) {
     for (let i = 0; i < allcategoryGames.length; i++) {
         let currentGame = allGames[allcategoryGames[i]];
         const div = document.createElement("div");
-        div.className = "box col-lg-3 col-md-4 col-6 pt-3 pb-3";
+        if (categoryContent.classList.contains("list-mode")) {
+            div.className = "box col-lg-6 col-md-12 col-12 pt-2 pb-2";
+        } else {
+            div.className = "box col-lg-3 col-md-4 col-6 pt-2 pb-2";
+        }
         div.innerHTML = `
         <div class="content">
             <div class="game-img relative">
