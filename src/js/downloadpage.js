@@ -1,4 +1,5 @@
 export default function setUpDownloadPage(pageData) {
+    console.log(pageData);
     const app = document.getElementById("app");
     let loadScreen = document.querySelector(".loader-screen");
     if (loadScreen) {
@@ -13,17 +14,17 @@ export default function setUpDownloadPage(pageData) {
     }
     const Observe = new MutationObserver((mutations, obs) => {
         loadScreen = document.querySelector(".loader-screen");
-        const downloadLink = document.querySelector(".download_link");
-        if (downloadLink) {
-            document.querySelector(".download_link > img").src = `${pageData.gameImage}`
-            document.querySelector(".input.popsok").href = `${pageData.downloadLink}`;
-            document.querySelector(".input.popsok").innerHTML = `DOWNLOAD (${pageData.gameSize})`;
+        const downloadBox = document.querySelector(".download-box");
+        if (downloadBox) {
+            document.querySelector(".title").innerHTML = `${pageData.gameName}`
+            document.querySelector(".card > img").src = `${pageData.gameImage}`
+            document.querySelector(".download-game-btn").href = `${pageData.downloadLink}`;
+            document.querySelector(".game-tag").innerHTML = `${pageData.category}`
+            document.querySelector(".game-size").innerHTML = `${pageData.gameSize}`;
+            document.querySelector(".rating").innerHTML = `${pageData.stars} (${pageData.reviewTime} reviews)`
+            document.querySelector(".description").innerHTML = `${pageData.gameDesc}`;
         }
-        const promoDownloadName = document.querySelector(".promoDownloadName .dl-btn-label");
-        if (promoDownloadName) {
-            promoDownloadName.innerHTML = `${pageData.gameName}`;
-        }
-        if (downloadLink && promoDownloadName) {
+        if (downloadBox) {
             obs.disconnect();
         }
     });

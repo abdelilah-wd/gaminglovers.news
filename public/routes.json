@@ -8,7 +8,7 @@
     },
     "/Download/monopoly-go": {
         "path": "/Download/monopoly-go",
-        "filePath": "/html/mediafire-page.html",
+        "filePath": "/html/downloadPage.html",
         "pageDesc": "Download Monopoly Go Game For Free",
         "title": "Download Monopoly Go",
         "pageIcon": "/assets/icons/monopoly-go.ico",
@@ -16,7 +16,7 @@
     },
     "/Download/last-war": {
         "path": "/Download/last-war",
-        "filePath": "/html/mediafire-page.html",
+        "filePath": "/html/downloadPage.html",
         "pageDesc": "Download last war game for free",
         "title": "Download Last War Mode",
         "pageIcon": "/assets/icons/last-war.ico",
@@ -24,7 +24,7 @@
     },
     "/Download/kingshot": {
         "path": "/Download/kingshot",
-        "filePath": "/html/mediafire-page.html",
+        "filePath": "/html/downloadPage.html",
         "pageDesc": "Download Kingshot game for free",
         "title": "Download Kingshot",
         "pageIcon": "/assets/icons/kingshot.ico",
@@ -32,7 +32,7 @@
     },
     "/Download/candy-crush-saga": {
         "path": "/Download/candy-crush-saga",
-        "filePath": "/html/mediafire-page.html",
+        "filePath": "/html/downloadPage.html",
         "pageDesc": "Download Candy Crush Saga game for free",
         "title": "Download Candy Crush Saga",
         "pageIcon": "/assets/icons/candy-crush-saga.ico",

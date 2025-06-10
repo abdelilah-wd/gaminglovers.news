@@ -10,7 +10,9 @@
         "bgImg": "/assets/images/monopoly-go/bg.jpg",
         "gameName": "Monopoly Go",
         "gameSize": "150MB",
+        "gameDesc" : "Get ready to roll the dice and build your empire without limits with Monopoly GO! MOD – the fully unlocked, premium version that gives you everything you need to dominate the board! Experience the classic board game like never before, with enhanced features and endless resources to become the ultimate tycoon.",
         "stars": "4.7",
+        "reviewTime": "2.89M",
         "dowCount": "50M+",
         "category": "Board"
     },
@@ -25,7 +27,9 @@
         "bgImg": "/assets/images/last-war/bg.webp",
         "gameName": "Last War: Survival",
         "gameSize": "2GB",
+        "gameDesc": "Get ready for an unparalleled strategy and survival experience with Last War: Survival Game MOD – the fully unlocked, premium version that gives you everything you need to dominate the desolate lands and build the strongest shelters! Immerse yourself in a post-apocalyptic world where every decision matters and every battle counts, and begin your journey toward",
         "stars": "4.6",
+        "reviewTime": "1.14M",
         "dowCount": "50M+",
         "category": "Strategy"
     },
@@ -40,7 +44,9 @@
         "bgImg": "/assets/images/kingshot/bg.webp",
         "gameName": "Kingshot",
         "gameSize": "651MB",
+        "gameDesc": "Prepare to conquer medieval lands and build an unshakeable empire with Kingshot MOD – the fully unlocked, premium version that grants you everything you need to dominate the battlefield and rise as the ultimate governor! Dive into a rich idle medieval survival and strategy experience, where every decision shapes your destiny and every battle brings you closer to supremacy.",
         "stars": "4.6",
+        "reviewTime": "295K",
         "dowCount": "5M+",
         "category": "Strategy"
     },
@@ -55,7 +61,9 @@
         "bgImg": "/assets/images/candy-crush-saga/bg.webp",
         "gameName": "Candy Crush Saga",
         "gameSize": "126 MB",
+        "gameDesc": "Get ready to crush candies and blast through levels without limits with Candy Crush Saga MOD – the fully unlocked, premium version that gives you everything you need to sweeten your journey! Dive into a world of delicious puzzles and endless fun, with enhanced power-ups and infinite moves to become the ultimate candy master.",
         "stars": "4.4",
+        "reviewTime": "38.7M",
         "dowCount": "1B+",
         "category": "Puzzle"
     }

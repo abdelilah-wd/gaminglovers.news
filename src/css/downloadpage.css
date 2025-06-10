@@ -1,69 +1,115 @@
-.download-content .game-info {
-    position: relative;
+body {
+    margin: 0;
+    background-color: #0d1117;
+    font-family: 'Segoe UI', sans-serif;
+    color: #ffffff;
+    padding: 0;
 }
 
-@media (min-width: 992px) {
-    .download-content .game-info {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -70%);
-        z-index: 100;
-    }
+.download-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #070720;
+    padding: 15px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+.download-box {
+    max-width: 420px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
 }
 
-.download-content .game-info .game-img {
-    width: 200px;
-    border-radius: 10px;
+.card {
+    background-color: #161b22;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    margin-bottom: 20px;
 }
 
-.download-content .download-info>div {
-    padding: 1rem;
-    width: fit-content;
+.card img {
+    width: 100%;
+    height: auto;
 }
 
-.download-content .download-info>div>div {
-    height: 250px;
-    width: 200px;
+.card-content {
+    padding: 16px;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 6px;
     color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 16px 0px #3a3a3ac4;
-    background: #e53637;
 }
 
-@media (max-width: 992px) {
-    .download-content .download-info>div>div {
-        height: 190px;
-        width: 150px;
-    }
+.rating {
+    color: #facc15;
+    font-size: 14px;
+    margin-bottom: 10px;
 }
 
-@media (max-width: 380px) {
-    .download-content .download-info>div>div {
-        height: 190px;
-        width: 250px;
-    }
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 16px;
+    color: #c9d1d9;
 }
 
-.download-content .download-info>div i {
-    color: var(--main-blue-color);
-    font-size: 100px;
-    margin-bottom: 1rem;
-
+.tag {
+    background-color: #30363d;
+    padding: 5px 10px;
+    border-radius: 8px;
 }
 
-@media (max-width: 992px) {
-    .download-content .download-info>div i {
-        font-size: 80px;
-    }
+.description {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #c9d1d9;
+    margin-bottom: 16px;
 }
 
-.download-content .download-info>div span {
+.features {
+    margin-bottom: 16px;
+}
+
+.features li {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #d1d5db;
+}
+
+.download-game-btn {
+    display: block;
+    width: 100%;
     text-align: center;
-    color: white;
-    font-size: 20px;
-    font-weight: 800;
-    text-transform: uppercase;
-    font-family: 'Oswald',
-        sans-serif;
+    background: linear-gradient(to right, #0ea5e9, #3b82f6);
+    color: #fff;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+.download-game-btn:hover {
+    background: linear-gradient(to right, #0284c7, #2563eb);
+}
+
+.screenshot {
+    margin-top: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.screenshot img {
+    width: 100%;
+    display: block;
 }

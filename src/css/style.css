@@ -197,7 +197,7 @@ nav.navbar {
   background-color: transparent;
 }
 
-.navbar .navbar-brand {
+.navbar-brand {
   color: red;
   font-weight: 900;
   letter-spacing: -1px;
@@ -218,7 +218,7 @@ nav.navbar {
   font-size: 1.6rem;
 }
 
-.navbar .navbar-brand span {
+.navbar-brand span {
   color: white;
 }
 

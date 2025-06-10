@@ -1,8 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
-import '@fortawesome/fontawesome-free/css/all.min.css'
-import './css/mediafire-style.css'
-import './css/style.css'
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import './css/downloadpage.css';
+import './css/mediafire-style.css';
+import './css/style.css';
 import setUpHomePage from './js/homepage';
 import setUpDownloadPage from './js/downloadpage';
 import { setUpCategory } from './js/homepage';
