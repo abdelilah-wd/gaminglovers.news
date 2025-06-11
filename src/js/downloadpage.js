@@ -18,7 +18,7 @@ export default function setUpDownloadPage(pageData) {
         const downloadBox = document.querySelector(".download-box");
         if (downloadBox) {
             document.querySelector(".title").innerHTML = `${pageData.gameName}`
-            document.querySelector(".card > img").src = `${pageData.gameImage}`
+            document.querySelector(".card .game-logo").src = `${pageData.gameImage}`
             document.querySelector(".download-game-btn").href = `${pageData.downloadLink}`;
             document.querySelector(".game-tag").innerHTML = `${pageData.category}`
             document.querySelector(".game-size").innerHTML = `${pageData.gameSize}`;
@@ -27,9 +27,9 @@ export default function setUpDownloadPage(pageData) {
             if (pageData.features) {
                 document.querySelector(".features").innerHTML = `${pageData.features}`
             }
-            document.querySelector(".go-down").addEventListener("click", event => {
-                window.scrollTo(0, document.body.scrollHeight);
-            })
+            // document.querySelector(".go-down").addEventListener("click", event => {
+            //     window.scrollTo(0, document.body.scrollHeight);
+            // })
         }
         if (downloadBox) {
             obs.disconnect();
