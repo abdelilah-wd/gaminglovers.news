@@ -37,5 +37,13 @@
         "title": "Download Candy Crush Saga",
         "pageIcon": "/assets/icons/candy-crush-saga.ico",
         "gameName": "candy-crush-saga"
+    },
+    "/Download/8Ball-Pool": {
+        "path": "/Download/8Ball-Pool",
+        "filePath": "/html/downloadPage.html",
+        "pageDesc": "Get ready to break, pot, and dominate the felt like never before with 8 Ball Pool MOD – the fully unlocked, premium version that gives you the edge to become a pool legend! Experience the thrill of realistic billiards with enhanced features and endless resources to climb the ranks and pocket every win",
+        "title": "Download 8 Ball Pool",
+        "pageIcon": "/assets/icons/brand.ico",
+        "gameName": "8ball-pool"
     }
 }

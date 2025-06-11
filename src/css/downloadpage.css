@@ -6,6 +6,36 @@ body {
     padding: 0;
 }
 
+.container-fuild {
+    height: calc(100vh - 70px);
+}
+
+.go-down {
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #e53637;
+    cursor: pointer;
+}
+.go-down i {
+    transition: 0.5s;
+}
+.go-down i {
+    animation: godown 0.5s ease-in-out alternate infinite;
+}
+@keyframes godown {
+    to {
+        transform: translateY(1rem);
+    }
+}
 .download-header {
     width: 100%;
     display: flex;
@@ -15,6 +45,7 @@ body {
     padding: 15px 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
+
 .download-box {
     max-width: 420px;
     width: 100%;

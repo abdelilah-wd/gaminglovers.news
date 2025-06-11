@@ -95,7 +95,7 @@ export default function setUpHomePage(homeData, allGames) {
                         <div class="download-btn"><a href="${currentGame.downloadPage}">Download</a></div>
                     </div>
                     <div class="info">
-                        <div class="top-info d-flex ">
+                        <div class="top-info d-flex gap-2">
                             <div class="stars"><i class="fa-solid fa-star"></i>${currentGame.stars}</div>
                             <div class="download-count"><i class="fa-solid fa-download"></i>${currentGame.dowCount}</div>
                         </div>
@@ -156,7 +156,7 @@ export function setUpCategory(allGames) {
                 <div class="download-btn"><a href="${currentGame.downloadPage}">Download</a></div>
             </div>
             <div class="info">
-                <div class="top-info d-flex ">
+                <div class="top-info d-flex gap-2">
                     <div class="stars"><i class="fa-solid fa-star"></i>${currentGame.stars}</div>
                     <div class="download-count"><i class="fa-solid fa-download"></i>${currentGame.dowCount}</div>
                 </div>

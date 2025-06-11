@@ -13,9 +13,12 @@ async function loadPage(page) {
         let response = await fetch(routeFile);
         if (!response.ok) throw new Error(`can't fetching data from ${routeFile}...`);
         let data = await response.json();
+        console.log(data);
+        console.log(page);
+        console.log(data[page]);
         let route = data[page] || data["/home"];
         if (route.path !== location.pathname) history.pushState({}, "", "/home");
-        
+
         let htmlResponse = await fetch(route.filePath);
         let html = await htmlResponse.text();
         app.innerHTML = html;

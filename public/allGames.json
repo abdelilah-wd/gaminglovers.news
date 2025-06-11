@@ -1,7 +1,7 @@
 {
     "monopoly-go": {
         "downloadPage": "/Download/monopoly-go",
-        "filePath": "/html/mediafire-page.html",
+        "filePath": "/html/downloadPage.html",
         "pageDesc": "Download Monopoly Go Game For Free",
         "pageTitle": "Download Monopoly Go",
         "pageIcon": "/assets/icons/monopoly-go.ico",
@@ -10,7 +10,7 @@
         "bgImg": "/assets/images/monopoly-go/bg.jpg",
         "gameName": "Monopoly Go",
         "gameSize": "150MB",
-        "gameDesc" : "Get ready to roll the dice and build your empire without limits with Monopoly GO! MOD – the fully unlocked, premium version that gives you everything you need to dominate the board! Experience the classic board game like never before, with enhanced features and endless resources to become the ultimate tycoon.",
+        "gameDesc": "Get ready to roll the dice and build your empire without limits with Monopoly GO! MOD – the fully unlocked, premium version that gives you everything you need to dominate the board! Experience the classic board game like never before, with enhanced features and endless resources to become the ultimate tycoon.",
         "stars": "4.7",
         "reviewTime": "2.89M",
         "dowCount": "50M+",
@@ -18,7 +18,7 @@
     },
     "last-war": {
         "downloadPage": "/Download/last-war",
-        "filePath": "/html/mediafire-page.html",
+        "filePath": "/html/downloadPage.html",
         "pageDesc": "Download last war game for free",
         "pageTitle": "Download Last War Mode",
         "pageIcon": "/assets/icons/last-war.ico",
@@ -35,7 +35,7 @@
     },
     "kingshot": {
         "downloadPage": "/Download/kingshot",
-        "filePath": "/html/mediafire-page.html",
+        "filePath": "/html/downloadPage.html",
         "pageDesc": "Download Kingshot game for free",
         "pageTitle": "Download Kingshot",
         "pageIcon": "/assets/icons/kingshot.ico",
@@ -52,7 +52,7 @@
     },
     "candy-crush-saga": {
         "downloadPage": "/Download/candy-crush-saga",
-        "filePath": "/html/mediafire-page.html",
+        "filePath": "/html/downloadPage.html",
         "pageDesc": "Download Candy Crush Saga game for free",
         "pageTitle": "Download Candy Crush Saga",
         "pageIcon": "/assets/icons/candy-crush-saga.ico",
@@ -66,5 +66,23 @@
         "reviewTime": "38.7M",
         "dowCount": "1B+",
         "category": "Puzzle"
+    },
+    "8ball-pool": {
+        "downloadPage": "/Download/8Ball-Pool",
+        "filePath": "/html/downloadPage.html",
+        "pageDesc": "Get ready to break, pot, and dominate the felt like never before with 8 Ball Pool MOD – the fully unlocked, premium version that gives you the edge to become a pool legend! Experience the thrill of realistic billiards with enhanced features and endless resources to climb the ranks and pocket every win.",
+        "pageTitle": "Download 8 Ball Pool",
+        "pageIcon": "/assets/icons/candy-crush-saga.ico",
+        "downloadLink": "https://appinstallcheck.com/cl/i/po8lk5",
+        "gameImage": "/assets/images/8ballpool/logo.webp",
+        "bgImg": "/assets/images/8ballpool/bg.webp",
+        "gameName": "8 Ball Pool",
+        "gameSize": "178 MB",
+        "gameDesc": "Get ready to break, pot, and dominate the felt like never before with 8 Ball Pool MOD – the fully unlocked, premium version that gives you the edge to become a pool legend! Experience the thrill of realistic billiards with enhanced features and endless resources to climb the ranks and pocket every win.",
+        "features": "<li>✨ What makes this version special?</li><li>✅ Premium Unlocked / Fully Paid Version: Access all exclusive features and options without any in-app purchases!</li> <li>💰 Unlimited Coins & Cash: Get an endless supply of in-game currency to upgrade your cue, buy crates, and enter high-stakes tournaments without worrying about your balance.</li><li>🔓 All Cues & Tables Unlocked: Unlock all legendary and powerful cues, and access all available tables and arenas right from the start.</li><li>📏 Long Guideline / Extended Aim Line: Get an unfair advantage with an extended aiming line that ensures pinpoint accuracy with every shot.</li><li>🚫 Ad-Free Gameplay: Enjoy seamless, uninterrupted gaming sessions without any annoying ads.</li><li>🚀 Enhanced Performance & Experience: Benefit from smoother gameplay and optimized graphics for an unparalleled billiards experience.</li>",
+        "stars": "4.8",
+        "reviewTime": "+500k",
+        "dowCount": "2.1M+",
+        "category": "Sports"
     }
 }
