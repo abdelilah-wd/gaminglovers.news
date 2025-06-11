@@ -68,6 +68,7 @@ export default function setUpHomePage(homeData, allGames) {
                 carouselIndicators.appendChild(IndicatorBtn);
             }
             document.querySelector(".carousel-control-next").click();
+            document.querySelector(".carousel-control-prev").click();
             if (document.getElementById("carouselWithCaptions")) {
                 let interval = setInterval(() => {
                     if (window.innerWidth < 992) {
