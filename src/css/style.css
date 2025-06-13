@@ -202,11 +202,13 @@ nav.navbar {
   font-weight: 900;
   letter-spacing: -1px;
   font-size: 26px;
-  font-family: 'Oswald', sans-serif;
-  text-transform: uppercase;
+  font-family: 'Exo+2', sans-serif;
+  text-transform: capitalize;
   letter-spacing: 3px;
 }
-
+.navbar-brand:hover {
+  color: red;
+}
 .navbar .navbar-toggler:focus {
   box-shadow: none;
   transition: var(--main-transition-duration);
