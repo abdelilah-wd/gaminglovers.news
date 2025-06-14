@@ -67,8 +67,9 @@ export default function setUpHomePage(homeData, allGames) {
                 IndicatorBtn.setAttribute("aria-label", `Slide ${i + 1}`);
                 carouselIndicators.appendChild(IndicatorBtn);
             }
-            document.querySelector(".carousel-control-next").click();
-            document.querySelector(".carousel-control-prev").click();
+            setTimeout(() => {
+                document.querySelector(".carousel-control-next").click();
+            }, 1000);
             if (document.getElementById("carouselWithCaptions")) {
                 let interval = setInterval(() => {
                     if (window.innerWidth < 992) {

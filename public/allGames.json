@@ -76,6 +76,11 @@
         "downloadLink": "https://appinstallcheck.com/cl/i/po8lk5",
         "gameImage": "/assets/images/8ballpool/logo.webp",
         "bgImg": "/assets/images/8ballpool/bg.webp",
+        "gameScreenShot": [
+            "/assets/images/8ballpool/bg.webp",
+            "/assets/images/8ballpool/bg.webp",
+            "/assets/images/8ballpool/bg.webp"
+        ],
         "gameName": "8 Ball Pool",
         "gameSize": "178 MB",
         "gameDesc": "Get ready to break, pot, and dominate the felt like never before with 8 Ball Pool MOD – the fully unlocked, premium version that gives you the edge to become a pool legend! Experience the thrill of realistic billiards with enhanced features and endless resources to climb the ranks and pocket every win.",

@@ -31,7 +31,38 @@ export default function setUpDownloadPage(pageData) {
             //     window.scrollTo(0, document.body.scrollHeight);
             // })
         }
-        if (downloadBox) {
+        const cardHeader = document.querySelector(".card .card-header") ;
+        if (cardHeader) {
+            if (pageData.gameScreenShot) {
+                console.log(pageData.gameScreenShot);
+                const carouselInner = document.querySelector(".carousel-inner")
+                const carouselIndicators = document.querySelector(".carousel-indicators");
+                for (let i = 0; i < pageData.gameScreenShot.length; i++) {
+                    console.log(i);
+                    let IndicatorBtn = document.createElement("button");
+                    IndicatorBtn.type = "button";
+                    IndicatorBtn.setAttribute("data-bs-target", "#carouselWithCaptions");
+                    IndicatorBtn.setAttribute("data-bs-slide-to", `${i}`);
+                    if (i === 0) {
+                        IndicatorBtn.className = "active";
+                        IndicatorBtn.setAttribute("aria-current", "true")
+                    }
+                    IndicatorBtn.setAttribute("aria-label", `Slide ${i + 1}`);
+                    console.log(IndicatorBtn);
+                    carouselIndicators.appendChild(IndicatorBtn);
+
+
+                    let currentCarouselItem = pageData.gameScreenShot[i];
+                    let carouselItem = document.createElement("div");
+                    carouselItem.className = `carousel-item ${i === 0 ? "active" : ""}`;
+                    carouselItem.setAttribute("data-bs-interval", "4000");
+                    carouselItem.style.backgroundImage = `url(${currentCarouselItem})`
+                    carouselInner.appendChild(carouselItem);
+                }
+
+            }
+        }
+        if (downloadBox && cardHeader) {
             obs.disconnect();
         }
     });
