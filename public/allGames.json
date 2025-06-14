@@ -1,6 +1,6 @@
 {
     "monopoly-go": {
-        "downloadPage": "/Download/monopoly-go",
+        "downloadPage": "/monopoly-go",
         "filePath": "/html/downloadPage.html",
         "pageDesc": "Download Monopoly Go Game For Free",
         "pageTitle": "Download Monopoly Go",
@@ -8,6 +8,9 @@
         "downloadLink": "https://installchecker.com/cl/i/dv9d37",
         "gameImage": "/assets/images/monopoly-go/logo.webp",
         "bgImg": "/assets/images/monopoly-go/bg.jpg",
+        "gameScreenShot": [
+            "/assets/images/monopoly-go/bg.webp"
+        ],
         "gameName": "Monopoly Go",
         "gameSize": "150MB",
         "gameDesc": "Get ready to roll the dice and build your empire without limits with Monopoly GO! MOD – the fully unlocked, premium version that gives you everything you need to dominate the board! Experience the classic board game like never before, with enhanced features and endless resources to become the ultimate tycoon.",
@@ -17,7 +20,7 @@
         "category": "Board"
     },
     "last-war": {
-        "downloadPage": "/Download/last-war",
+        "downloadPage": "/last-war",
         "filePath": "/html/downloadPage.html",
         "pageDesc": "Download last war game for free",
         "pageTitle": "Download Last War Mode",
@@ -25,6 +28,9 @@
         "downloadLink": "https://installchecker.com/cl/i/g6ome1",
         "gameImage": "/assets/images/last-war/logo.webp",
         "bgImg": "/assets/images/last-war/bg.webp",
+        "gameScreenShot": [
+            "/assets/images/last-war/bg.webp"
+        ],
         "gameName": "Last War: Survival",
         "gameSize": "2GB",
         "gameDesc": "Get ready for an unparalleled strategy and survival experience with Last War: Survival Game MOD – the fully unlocked, premium version that gives you everything you need to dominate the desolate lands and build the strongest shelters! Immerse yourself in a post-apocalyptic world where every decision matters and every battle counts, and begin your journey toward",
@@ -34,7 +40,7 @@
         "category": "Strategy"
     },
     "kingshot": {
-        "downloadPage": "/Download/kingshot",
+        "downloadPage": "/kingshot",
         "filePath": "/html/downloadPage.html",
         "pageDesc": "Download Kingshot game for free",
         "pageTitle": "Download Kingshot",
@@ -42,6 +48,9 @@
         "downloadLink": "https://installchecker.com/sl/49v3j",
         "gameImage": "/assets/images/kingshot/logo.webp",
         "bgImg": "/assets/images/kingshot/bg.webp",
+        "gameScreenShot": [
+            "/assets/images/kingshot/bg.webp"
+        ],
         "gameName": "Kingshot",
         "gameSize": "651MB",
         "gameDesc": "Prepare to conquer medieval lands and build an unshakeable empire with Kingshot MOD – the fully unlocked, premium version that grants you everything you need to dominate the battlefield and rise as the ultimate governor! Dive into a rich idle medieval survival and strategy experience, where every decision shapes your destiny and every battle brings you closer to supremacy.",
@@ -51,7 +60,7 @@
         "category": "Strategy"
     },
     "candy-crush-saga": {
-        "downloadPage": "/Download/candy-crush-saga",
+        "downloadPage": "/candy-crush-saga",
         "filePath": "/html/downloadPage.html",
         "pageDesc": "Download Candy Crush Saga game for free",
         "pageTitle": "Download Candy Crush Saga",
@@ -59,6 +68,9 @@
         "downloadLink": "https://installchecker.com/sl/49v3j",
         "gameImage": "/assets/images/candy-crush-saga/logo.webp",
         "bgImg": "/assets/images/candy-crush-saga/bg.webp",
+        "gameScreenShot": [
+            "/assets/images/candy-crush-saga/bg.webp"
+        ],
         "gameName": "Candy Crush Saga",
         "gameSize": "126 MB",
         "gameDesc": "Get ready to crush candies and blast through levels without limits with Candy Crush Saga MOD – the fully unlocked, premium version that gives you everything you need to sweeten your journey! Dive into a world of delicious puzzles and endless fun, with enhanced power-ups and infinite moves to become the ultimate candy master.",
@@ -68,7 +80,7 @@
         "category": "Puzzle"
     },
     "8ball-pool": {
-        "downloadPage": "/Download/8Ball-Pool",
+        "downloadPage": "/8Ball-Pool",
         "filePath": "/html/downloadPage.html",
         "pageDesc": "Get ready to break, pot, and dominate the felt like never before with 8 Ball Pool MOD – the fully unlocked, premium version that gives you the edge to become a pool legend! Experience the thrill of realistic billiards with enhanced features and endless resources to climb the ranks and pocket every win.",
         "pageTitle": "Download 8 Ball Pool",
@@ -77,8 +89,6 @@
         "gameImage": "/assets/images/8ballpool/logo.webp",
         "bgImg": "/assets/images/8ballpool/bg.webp",
         "gameScreenShot": [
-            "/assets/images/8ballpool/bg.webp",
-            "/assets/images/8ballpool/bg.webp",
             "/assets/images/8ballpool/bg.webp"
         ],
         "gameName": "8 Ball Pool",
@@ -88,6 +98,31 @@
         "stars": "4.8",
         "reviewTime": "+500k",
         "dowCount": "2.1M+",
+        "category": "Sports"
+    },
+    "Rematch": {
+        "downloadPage": "/Rematch",
+        "filePath": "/html/downloadPage.html",
+        "pageDesc": "Lace up your boots and prepare for electrifying 5v5 street football action with Rematch Football MOD – the fully unlocked, premium version that gives you the unfair advantage to dominate every urban pitch! Experience the high-energy, arcade-style gameplay with unlimited customization options and supreme control to outmaneuver opponents and secure that satisfying rematch victory every time.",
+        "pageTitle": "Download Rematch Football",
+        "pageIcon": "/assets/icons/candy-crush-saga.ico",
+        "downloadLink": "https://otieu.com/4/9444482",
+        "gameImage": "/assets/images/rematch/logo.jpg",
+        "bgImg": "/assets/images/rematch/bg.jpg",
+        "gameScreenShot": [
+            "/assets/images/rematch/bg.jpg",
+            "/assets/images/rematch/bg1.jpg",
+            "/assets/images/rematch/bg2.jpg",
+            "/assets/images/rematch/bg3.jpg",
+            "/assets/images/rematch/bg4.jpg"
+        ],
+        "gameName": "REMATCH",
+        "gameSize": "479 MB",
+        "gameDesc": "Lace up your boots and prepare for electrifying 5v5 street football action with Rematch Football MOD – the fully unlocked, premium version that gives you the unfair advantage to dominate every urban pitch! Experience the high-energy, arcade-style gameplay with unlimited customization options and supreme control to outmaneuver opponents and secure that satisfying rematch victory every time.",
+        "features": "<li>✨ What makes this version special?</li><li>✅ Premium Unlocked / Fully Paid Version: Access all exclusive features and options without any in-app purchases!</li> <li>💰 Unlimited Coins & Cash: Get an endless supply of in-game currency to upgrade your cue, buy crates, and enter high-stakes tournaments without worrying about your balance.</li><li>🔓 All Cues & Tables Unlocked: Unlock all legendary and powerful cues, and access all available tables and arenas right from the start.</li><li>📏 Long Guideline / Extended Aim Line: Get an unfair advantage with an extended aiming line that ensures pinpoint accuracy with every shot.</li><li>🚫 Ad-Free Gameplay: Enjoy seamless, uninterrupted gaming sessions without any annoying ads.</li><li>🚀 Enhanced Performance & Experience: Benefit from smoother gameplay and optimized graphics for an unparalleled billiards experience.</li>✅ Premium Unlocked / Fully Paid Version: Access all exclusive player builds, cosmetic items, and game modes without any limitations!</li><li>💰 Unlimited Coins & Resources: Upgrade your player's skills, unlock rare gear, and customize your look at lightning speed, ensuring you're always match-ready.</li><li>🔓 All Customization Unlocked: Unleash your creativity with all outfits, emotes, celebrations, and visual effects available from the get-go.</li><li>⚡ Enhanced Player Abilities: Boost your speed, shot power, dribbling, and tackling to perform impossible plays and outshine every opponent.</li><li>🚫 Ad-Free Gameplay: Enjoy seamless, uninterrupted matches and fluid menu navigation without any annoying commercials.</li><li>🚀 Optimized Performance & Graphics: Experience buttery-smooth gameplay, sharper visuals, and reduced lag for the most immersive street football showdowns.</li>",
+        "stars": "4.9",
+        "reviewTime": "+100k",
+        "dowCount": "1M+",
         "category": "Sports"
     }
 }

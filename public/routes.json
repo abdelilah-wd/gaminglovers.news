@@ -6,44 +6,52 @@
         "title": "Gaming Lovers: Your Gateway to Top Games Worldwide",
         "pageIcon": "/assets/icons/brand.ico"
     },
-    "/Download/monopoly-go": {
-        "path": "/Download/monopoly-go",
+    "/monopoly-go": {
+        "path": "/monopoly-go",
         "filePath": "/html/downloadPage.html",
         "pageDesc": "Download Monopoly Go Game For Free",
         "title": "Download Monopoly Go",
         "pageIcon": "/assets/icons/monopoly-go.ico",
         "gameName": "monopoly-go"
     },
-    "/Download/last-war": {
-        "path": "/Download/last-war",
+    "/last-war": {
+        "path": "/last-war",
         "filePath": "/html/downloadPage.html",
         "pageDesc": "Download last war game for free",
         "title": "Download Last War Mode",
         "pageIcon": "/assets/icons/last-war.ico",
         "gameName": "last-war"
     },
-    "/Download/kingshot": {
-        "path": "/Download/kingshot",
+    "/kingshot": {
+        "path": "/kingshot",
         "filePath": "/html/downloadPage.html",
         "pageDesc": "Download Kingshot game for free",
         "title": "Download Kingshot",
         "pageIcon": "/assets/icons/kingshot.ico",
         "gameName": "kingshot"
     },
-    "/Download/candy-crush-saga": {
-        "path": "/Download/candy-crush-saga",
+    "/candy-crush-saga": {
+        "path": "/candy-crush-saga",
         "filePath": "/html/downloadPage.html",
         "pageDesc": "Download Candy Crush Saga game for free",
         "title": "Download Candy Crush Saga",
         "pageIcon": "/assets/icons/candy-crush-saga.ico",
         "gameName": "candy-crush-saga"
     },
-    "/Download/8Ball-Pool": {
-        "path": "/Download/8Ball-Pool",
+    "/8Ball-Pool": {
+        "path": "/8Ball-Pool",
         "filePath": "/html/downloadPage.html",
         "pageDesc": "Get ready to break, pot, and dominate the felt like never before with 8 Ball Pool MOD – the fully unlocked, premium version that gives you the edge to become a pool legend! Experience the thrill of realistic billiards with enhanced features and endless resources to climb the ranks and pocket every win",
         "title": "Download 8 Ball Pool",
         "pageIcon": "/assets/icons/brand.ico",
         "gameName": "8ball-pool"
+    },
+    "/Rematch": {
+        "path": "/Rematch",
+        "filePath": "/html/downloadPage.html",
+        "pageDesc": "Lace up your boots and prepare for electrifying 5v5 street football action with Rematch Football MOD – the fully unlocked, premium version that gives you the unfair advantage to dominate every urban pitch! Experience the high-energy, arcade-style gameplay with unlimited customization options and supreme control to outmaneuver opponents and secure that satisfying rematch victory every time.",
+        "title": "Download Rematch Football" ,
+        "pageIcon": "/assets/icons/brand.ico",
+        "gameName": "Rematch"
     }
 }

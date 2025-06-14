@@ -1,10 +1,10 @@
 {
-    "carouselItems": ["8ball-pool","last-war", "monopoly-go", "kingshot"],
-    "trendingGames": ["8ball-pool" ,"last-war", "monopoly-go", "kingshot"],
+    "carouselItems": ["Rematch", "8ball-pool", "monopoly-go"],
+    "trendingGames": ["8ball-pool" ,"Rematch", "monopoly-go", "kingshot"],
     "categorys": {
         "startegy": ["last-war", "kingshot"],
         "board": ["monopoly-go"],
         "puzzle": ["candy-crush-saga"],
-        "sports ": ["8ball-pool"]
+        "sports ": ["Rematch", "8ball-pool"]
     }
 }

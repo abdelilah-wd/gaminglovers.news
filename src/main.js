@@ -15,7 +15,7 @@ window.addEventListener('popstate', async () => {
     const homeData = await fetchData("/homeData.json")
     const currentPathname = window.location.pathname;
     if (currentPathname !== previousPathname) {
-        if (location.pathname.match(/\/\w+/ig).includes("/Download")) {
+        if (!location.pathname.match(/\/\w+/ig).includes("/home")) {
             const downloadPageData = await fetchData("/routes.json")
             setUpDownloadPage(allGames[downloadPageData[location.pathname].gameName]);
         } else {
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const allGames = await fetchData("/allGames.json");
     const homeData = await fetchData("/homeData.json");
     if (location.pathname != "") {
-        if (location.pathname.match(/\/\w+/ig) ? location.pathname.match(/\/\w+/ig).includes("/Download") : false) {
+        if (location.pathname.match(/\/\w+/ig) ? !location.pathname.match(/\/\w+/ig).includes("/home") : false) {
             const downloadPageData = await fetchData("/routes.json")
             setUpDownloadPage(allGames[downloadPageData[location.pathname].gameName]);
         } else {
@@ -38,11 +38,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const observe = new MutationObserver((mutations, obs) => {
         const allCategory = document.querySelectorAll(".dropdown-menu .dropdown-item");
-        console.log(allCategory);
         if (allCategory) {
             allCategory.forEach((ele) => {
                 ele.addEventListener("click", event => {
-                    console.log(document.querySelector(".view-title").innerHTML);
                     document.querySelector(".view-title").innerHTML = event.target.dataset.category
                     event.preventDefault();
                     if (event.target.dataset.category === "all") {

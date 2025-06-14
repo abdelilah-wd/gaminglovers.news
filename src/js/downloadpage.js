@@ -54,11 +54,14 @@ export default function setUpDownloadPage(pageData) {
 
                     let currentCarouselItem = pageData.gameScreenShot[i];
                     let carouselItem = document.createElement("div");
-                    carouselItem.className = `carousel-item ${i === 0 ? "active" : ""}`;
+                    carouselItem.className = `carousel-item ${i === 0 ? "active" : ""} rm-before`;
                     carouselItem.setAttribute("data-bs-interval", "4000");
                     carouselItem.style.backgroundImage = `url(${currentCarouselItem})`
                     carouselInner.appendChild(carouselItem);
                 }
+                setTimeout(() => {
+                    document.querySelector(".carousel-control-next").click();
+                }, 1000);
 
             }
         }
