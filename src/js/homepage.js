@@ -113,6 +113,40 @@ export default function setUpHomePage(homeData, allGames) {
                 trendingGameSection.appendChild(div);
                 document.querySelectorAll(".trend-section .row .game-img")[i].style.backgroundImage = `url(${currentGame.gameImage})`
             }
+            
+            let nextBtn = document.querySelector(".next-btn");
+            let previewBtn = document.querySelector(".preview-btn");
+            if (previewBtn && nextBtn) {
+                removeBtns();
+                previewBtn.addEventListener("click", event => {
+                    event.preventDefault();
+                    trendingGameSection.scrollLeft -= 250;
+                    removeBtns();
+                })
+                nextBtn.addEventListener("click", event => {
+                    event.preventDefault();
+                    trendingGameSection.scrollLeft += 250;
+                    removeBtns();
+                })
+            }
+
+            trendingGameSection.addEventListener("scroll", event => {
+                removeBtns();
+            })
+            function removeBtns() {
+                if (trendingGameSection.scrollLeft <= 24) {
+                    previewBtn.classList.remove("active");
+                } else {
+                    previewBtn.classList.add("active")
+                }
+
+                let maxScrollValue = trendingGameSection.scrollWidth - trendingGameSection.clientWidth - 24;
+                if (trendingGameSection.scrollLeft >= maxScrollValue) {
+                    nextBtn.classList.remove("active");
+                } else {
+                    nextBtn.classList.add("active");
+                }
+            }
         }
 
         // Category Section

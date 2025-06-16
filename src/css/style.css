@@ -206,9 +206,11 @@ nav.navbar {
   text-transform: capitalize;
   letter-spacing: 3px;
 }
+
 .navbar-brand:hover {
   color: red;
 }
+
 .navbar .navbar-toggler:focus {
   box-shadow: none;
   transition: var(--main-transition-duration);
@@ -281,9 +283,11 @@ nav.navbar {
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
 .carousel-item.rm-before::before {
   display: none;
 }
+
 /* @media (max-width: 992px) {
   .carousel .carousel-item::before {
     display: none;
@@ -396,10 +400,55 @@ nav.navbar {
   padding-bottom: var(--main-section-padding);
 }
 
-.list-mode {
-  /* flex-direction: column; */
+.next-btn,
+.preview-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  display: none;
 }
 
+.next-btn {
+  right: 0;
+}
+
+.preview-btn {
+  left: 0;
+}
+
+.next-btn.active,
+.preview-btn.active {
+  display: flex;
+}
+.preview-btn i {
+  left: 0;
+    animation: goleft 1s linear infinite;
+}
+.next-btn i {
+  right: 0;
+    animation: goright 1s linear infinite;
+}
+@keyframes goright {
+  to {
+    transform: translateX(0.5rem);
+    box-shadow: 0 0 20px var(--main-red-color);
+  }
+}
+@keyframes goleft {
+  to {
+    transform: translateX(-0.5rem);
+    box-shadow: 0 0 20px var(--main-red-color);
+  }
+}
 .trend-section .row>div {
   flex: 0 0 calc(100%/ 4);
 }
@@ -426,6 +475,11 @@ nav.navbar {
   .trend-section .row>div {
     flex: 0 0 80%;
   }
+}
+
+.trend-section .trend-content {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
 .box .content {
@@ -457,6 +511,11 @@ nav.navbar {
   background-repeat: no-repeat;
   overflow: hidden;
   border-radius: 10px;
+  transition: 0.5s;
+}
+
+.box .game-img:hover {
+  transform: scale(1.05);
 }
 
 .list-mode .box .game-img {
