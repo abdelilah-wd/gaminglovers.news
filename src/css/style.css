@@ -430,23 +430,24 @@ nav.navbar {
   display: flex;
 }
 .preview-btn i {
-  left: 0;
-    animation: goleft 1s linear infinite;
+  left: -5px;
+  animation: goleft 1.5s linear infinite;
 }
 .next-btn i {
-  right: 0;
-    animation: goright 1s linear infinite;
+  right: -5px;
+  animation: goright 1.5s linear infinite;
 }
 @keyframes goright {
   to {
     transform: translateX(0.5rem);
-    box-shadow: 0 0 20px var(--main-red-color);
+    color: var(--main-red-color);
+
   }
 }
 @keyframes goleft {
   to {
     transform: translateX(-0.5rem);
-    box-shadow: 0 0 20px var(--main-red-color);
+    color:var(--main-red-color);
   }
 }
 .trend-section .row>div {
