@@ -165,7 +165,10 @@ a {
 .main-heading .view-mode i {
   font-size: 22px;
 }
-
+.section-padding {
+  padding-top: var(--main-section-padding);
+  padding-bottom: var(--main-section-padding);
+}
 /* End Component  */
 /* Start Header Section */
 nav.navbar {
