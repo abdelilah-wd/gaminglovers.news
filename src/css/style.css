@@ -200,6 +200,7 @@ nav.navbar {
   z-index: 100;
   box-shadow: 1px 6px 20px #000000c9;
   transition: var(--scondry-transition-duration);
+  height: 72px;
 }
 
 @media (min-width: 992px) {
