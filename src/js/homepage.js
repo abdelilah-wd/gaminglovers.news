@@ -43,7 +43,7 @@ export default function setUpHomePage(homeData, allGames) {
             for (let i = 0; i < allCarouselItems.length; i++) {
                 let currentCarouselItem = allGames[allCarouselItems[i]];
                 let carouselItem = document.createElement("div");
-                carouselItem.className = `carousel-item ${i === 0 ? "active" : ""}`;
+                carouselItem.className = `carousel-item ${i === 0 ? "active" : ""} h-lg-50`;
                 carouselItem.setAttribute("data-bs-interval", "4000");
                 carouselItem.style.backgroundImage = `url(${currentCarouselItem.bgImg})`
                 carouselItem.innerHTML = `

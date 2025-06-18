@@ -272,6 +272,14 @@ nav.navbar {
   position: relative;
 }
 
+@media (min-width : 992px) {
+  .carousel .carousel-inner .h-lg-50 {
+    height: 70vh;
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
 .carousel .carousel-item::before {
   content: "";
   display: block;
@@ -394,6 +402,38 @@ nav.navbar {
   }
 }
 
+/* Start How it work section  */
+.how-work-section {}
+
+.how-work-section .card {
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.how-work-section .card:hover {
+  box-shadow: 0 0 20px 12px #ff000029;
+  transform: scale(1.05);
+}
+
+.how-work-section .card-body {
+  background-color: var(--main-red-color);
+}
+
+.how-work-section .card-body i {
+  font-size: 30px;
+  color: #0b0c2a;
+}
+
+.how-work-section .card-body h5 {
+  font-weight: 900;
+}
+
+.how-work-section .card-body p {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* End How it work section  */
 /* Start Trending Section  */
 .trend-section {
   padding-top: var(--main-section-padding);
@@ -429,14 +469,17 @@ nav.navbar {
 .preview-btn.active {
   display: flex;
 }
+
 .preview-btn i {
   left: -5px;
   animation: goleft 1.5s linear infinite;
 }
+
 .next-btn i {
   right: -5px;
   animation: goright 1.5s linear infinite;
 }
+
 @keyframes goright {
   to {
     transform: translateX(0.5rem);
@@ -444,12 +487,14 @@ nav.navbar {
 
   }
 }
+
 @keyframes goleft {
   to {
     transform: translateX(-0.5rem);
-    color:var(--main-red-color);
+    color: var(--main-red-color);
   }
 }
+
 .trend-section .row>div {
   flex: 0 0 calc(100%/ 4);
 }
@@ -474,7 +519,7 @@ nav.navbar {
 
 @media(max-width: 390px) {
   .trend-section .row>div {
-    flex: 0 0 80%;
+    flex: 0 0 70%;
   }
 }
 
@@ -528,42 +573,30 @@ nav.navbar {
   .box .game-img {
     height: 200px;
   }
-
-  /*  */
-  /*  */
-  .list-mode .box .game-img {}
 }
 
 @media (max-width: 992px) {
   .box .game-img {
     height: 200px;
   }
-
-  .list-mode .box .game-img {}
 }
 
 @media (max-width: 767px) {
   .box .game-img {
     height: 230px;
   }
-
-  .list-mode .box .game-img {}
 }
 
 @media (max-width: 576px) {
   .box .game-img {
     height: 140px;
   }
-
-  .list-mode .box .game-img {}
 }
 
 @media(max-width: 390px) {
   .box .game-img {
-    height: 200px;
+    height: 180px;
   }
-
-  .list-mode .box .game-img {}
 }
 
 .box .game-img:hover .download-btn {
