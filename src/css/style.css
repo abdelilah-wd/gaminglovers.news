@@ -144,7 +144,8 @@ a {
   width: 7px;
   height: 32px;
   left: 0;
-  top: 0;
+  top: 50%;
+  transform: translateY(-50%);
   background: var(--main-red-color);
 }
 
@@ -165,10 +166,12 @@ a {
 .main-heading .view-mode i {
   font-size: 22px;
 }
+
 .section-padding {
   padding-top: var(--main-section-padding);
   padding-bottom: var(--main-section-padding);
 }
+
 /* End Component  */
 /* Start Header Section */
 nav.navbar {
