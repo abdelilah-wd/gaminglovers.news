@@ -99,12 +99,37 @@ document.addEventListener("DOMContentLoaded", async () => {
                 }
             })
         }
+        const subscribeForm = document.getElementById('subscribe-form');
+        const endpoint = 'https://script.google.com/macros/s/AKfycbyqPhgLGZVV3877jZCGqxildnbEIUs6UYtEVX4FS8wTQVJuxJcB1P2q9gSLvrSCBLuUwg/exec'; // URL from Apps Script
+        if (subscribeForm) {
+            subscribeForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const email = document.getElementById('email').value;
+            
+                try {
+                    const res = await fetch(endpoint, {
+                        method: 'POST',
+                        body: new URLSearchParams({ email, token: "MY2025GAMINGTOKENQV01TOLOVERS" })
+                    });
+            
+                    const result = await res.json();
+                    console.log(result);
+                    if (result.result === 'success') {
+                        alert("Thanks for subscribing!");
+                        subscribeForm.reset();
+                    }
+                } catch (error) {
+                    alert("Something went wrong. Try again later.");
+                }
+            });
+            
+        }
         if (allCategory) obs.disconnect();
     });
-    observe.observe(document.body, {
-        childList: true,
-        subtree: true
-    })
+        observe.observe(document.body, {
+            childList: true,
+            subtree: true
+        })
 
 })
 

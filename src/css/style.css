@@ -10,7 +10,7 @@
   --main-transition-duration: 0.3s;
   --scondry-transition-duration: 0.5s;
 
-  --main-section-padding: 100px;
+  --main-section-padding: 80px;
   --scondry-section-padding: 60px;
 }
 
@@ -136,6 +136,7 @@ a {
   font-size: 1.5rem;
   padding-left: 15px;
   position: relative;
+  margin-bottom: 0;
 }
 
 .main-heading h2::before {
@@ -170,6 +171,24 @@ a {
 .section-padding {
   padding-top: var(--main-section-padding);
   padding-bottom: var(--main-section-padding);
+}
+
+.contact-btn {
+  padding: 10px 30px;
+  background-color: var(--main-red-color);
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 20px;
+  color: white;
+  border: 2px solid var(--main-red-color);
+  transition: 0.5s;
+}
+
+.contact-btn:hover {
+  background-color: transparent;
+  color: var(--main-red-color);
+  border: 2px solid var(--main-red-color);
+  transform: scale(1.03);
 }
 
 /* End Component  */
@@ -718,3 +737,62 @@ nav.navbar {
 }
 
 /* End Category Section  */
+.subscrib-form {
+  background-color: var(--main-red-color);
+  text-align: center;
+  color: white;
+}
+
+.subscrib-form h5 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: var(--main-blue-color);
+}
+
+.subscrib-form p {}
+
+.subscrib-form form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+.subscrib-form form input {
+  font-weight: 600;
+  outline: none;
+  border-radius: 10px;
+  width: 280px;
+  font-size: 17px;
+  border: 2px solid white;
+  transition: 1s;
+}
+
+.subscrib-form form input:invalid {
+  box-shadow: inset 0 0 20px 20px #ff000063;
+  border-color: red;
+}
+
+.subscrib-form form input:valid {
+  box-shadow: inset 0 0 20px 19px #00800087;
+  border-color: rgb(0, 220, 0);
+}
+
+.subscrib-form form button {
+  padding: 10px 40px !important;
+  font-weight: bold;
+  font-size: 17px;
+  outline: none;
+  border-radius: 20px;
+  color: var(--main-red-color);
+  border: 3px solid white;
+  transition: 0.5s;
+}
+
+.subscrib-form form button:hover {
+  background-color: transparent;
+  border-color: white;
+  color: white;
+  transform: scale(1.02);
+}
