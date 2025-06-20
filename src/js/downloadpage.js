@@ -1,4 +1,7 @@
 export default function setUpDownloadPage(pageData) {
+    let unlockGames = {};
+    console.log(unlockGames);
+    console.log(unlockGames["one"]);
     const app = document.getElementById("app");
     let loadScreen = document.querySelector(".loader-screen");
     if (loadScreen) {
@@ -19,6 +22,7 @@ export default function setUpDownloadPage(pageData) {
             document.querySelector(".card .game-logo").src = `${pageData.gameImage}`
             document.querySelector(".download-game-btn").href = `${pageData.downloadLink}`;
             document.querySelector(".download-game-btn").setAttribute("data-name", pageData.downloadPage.slice(1));
+            document.querySelector(".download-game-btn.unlocked").href = `${pageData.originalLink}`;
             document.querySelector(".game-tag").innerHTML = `${pageData.category}`
             document.querySelector(".game-size").innerHTML = `${pageData.gameSize}`;
             document.querySelector(".rating").innerHTML = `${pageData.stars} (${pageData.reviewTime} reviews)`
@@ -60,12 +64,25 @@ export default function setUpDownloadPage(pageData) {
             }
         }
         const downloadBtn = document.querySelector(".download-game-btn");
-        if (downloadBox) {
+        if (downloadBtn) {
             downloadBtn.addEventListener("click", event => {
-                console.log("is clicked");
+                let date = new Date();
+                let finalDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+                if (window.localStorage.unlockGames) {
+                    unlockGames = JSON.parse(window.localStorage.unlockGames);
+                    if (unlockGames[downloadBtn.getAttribute("data-name")]) {
+                        unlockGames[downloadBtn.getAttribute("data-name")].time = finalDate;
+                    } else {
+                        unlockGames[downloadBtn.getAttribute("data-name")] = {time: finalDate};
+                    }
+                    window.localStorage.setItem("unlockGames", JSON.stringify(unlockGames));
+                } else {
+                    unlockGames[downloadBtn.getAttribute("data-name")] = { time: finalDate }
+                    window.localStorage.setItem("unlockGames", JSON.stringify(unlockGames));
+                }
             });
         }
-        if (downloadBox && cardHeader) {
+        if (downloadBox && cardHeader && downloadBtn) {
             obs.disconnect();
         }
     });

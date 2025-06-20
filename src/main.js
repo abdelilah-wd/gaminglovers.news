@@ -31,6 +31,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (location.pathname.match(/\/\w+/ig) ? !location.pathname.match(/\/\w+/ig).includes("/home") : false) {
             const downloadPageData = await fetchData("/routes.json")
             setUpDownloadPage(allGames[downloadPageData[location.pathname].gameName]);
+            let pageOfGame = allGames[downloadPageData[location.pathname].gameName].downloadPage.slice(1);
+            if (window.localStorage.unlockGames) {
+                if (JSON.parse(window.localStorage.unlockGames)[pageOfGame]) {
+                    let unlockedTime = JSON.parse(window.localStorage.unlockGames)[pageOfGame].time;
+                    checkGameUnlocked(unlockedTime, pageOfGame);
+            }
+            }
         } else {
             setUpHomePage(homeData, allGames);
         }
@@ -134,8 +141,44 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 })
 
-function setUpCategorySection() {
-
+function checkGameUnlocked(date, gameName) {
+    let currentDate = new Date();
+    let oldDate = new Date(date);
+    if (oldDate.getFullYear() != currentDate.getFullYear() || oldDate.getMonth() + 1 != currentDate.getMonth() + 1 || oldDate.getDate() != currentDate.getDate()) {
+        return null;
+    }
+    let currentSecondTime = currentDate.getHours() * 3600 + currentDate.getMinutes() * 60 + currentDate.getSeconds();
+    let oldSecondTime = oldDate.getHours() * 3600 + oldDate.getMinutes() * 60 + oldDate.getSeconds();
+    let timeAfterLock = (currentSecondTime - oldSecondTime);
+    let unlockGameFor = 30 * 60; // by second
+    if (timeAfterLock / 60 > 60) return null;
+    const observe = new MutationObserver((mutations, obs) => {
+        let lockedBtn = document.querySelector(".download-game-btn")
+        let unlockedBtn = document.querySelector(".download-game-btn.unlocked")
+        if (lockedBtn && unlockedBtn) {
+            if (timeAfterLock > unlockGameFor) {
+                unlockedBtn.classList.remove("hidden");
+                lockedBtn.classList.add("hidden");
+            } else {
+                unlockedBtn.classList.add("hidden");
+                lockedBtn.classList.remove("hidden");
+                let counterBeforeUnlock = unlockGameFor - ((currentSecondTime - oldSecondTime));
+                let interval = setInterval(() => {
+                    console.log(counterBeforeUnlock) ;
+                    counterBeforeUnlock--;
+                    if (counterBeforeUnlock < 0) {
+                        clearInterval(interval);
+                        checkGameUnlocked(date, gameName);
+                    }
+                }, 1000);
+            }
+            obs.disconnect();
+        }
+    });
+    observe.observe(document.body, {
+        childList: true,
+        subtree: true
+    })
 }
 
 
