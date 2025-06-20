@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             setUpHomePage(homeData, allGames);
         }
     }
+    console.log(allGames);
 
     const observe = new MutationObserver((mutations, obs) => {
         const allCategory = document.querySelectorAll(".dropdown-menu .dropdown-item");
