@@ -21,6 +21,7 @@ export default function setUpDownloadPage(pageData) {
             document.querySelector(".title").innerHTML = `${pageData.gameName}`
             document.querySelector(".card .game-logo").src = `${pageData.gameImage}`
             document.querySelector(".download-game-btn").href = `${pageData.downloadLink}`;
+            document.querySelector(".notification .unlock-now").href = `${pageData.downloadLink}`;
             document.querySelector(".download-game-btn").setAttribute("data-name", pageData.downloadPage.slice(1));
             document.querySelector(".download-game-btn.unlocked").href = `${pageData.originalLink}`;
             document.querySelector(".game-tag").innerHTML = `${pageData.category}`
@@ -30,9 +31,6 @@ export default function setUpDownloadPage(pageData) {
             if (pageData.features) {
                 document.querySelector(".features").innerHTML = `${pageData.features}`
             }
-            // document.querySelector(".go-down").addEventListener("click", event => {
-            //     window.scrollTo(0, document.body.scrollHeight);
-            // })
         }
         const cardHeader = document.querySelector(".card .card-header") ;
         if (cardHeader) {
@@ -80,6 +78,10 @@ export default function setUpDownloadPage(pageData) {
                     unlockGames[downloadBtn.getAttribute("data-name")] = { time: finalDate }
                     window.localStorage.setItem("unlockGames", JSON.stringify(unlockGames));
                 }
+                gtag('event', 'countdown_started', { game_name: [downloadBtn.getAttribute("data-name")] });
+                setTimeout(() => {
+                    window.location.reload();
+                }, 500);
             });
         }
         if (downloadBox && cardHeader && downloadBtn) {

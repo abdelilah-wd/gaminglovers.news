@@ -142,38 +142,71 @@ document.addEventListener("DOMContentLoaded", async () => {
 })
 
 function checkGameUnlocked(date, gameName) {
+    console.log(gameName);
     let currentDate = new Date();
     let oldDate = new Date(date);
-    if (oldDate.getFullYear() != currentDate.getFullYear() || oldDate.getMonth() + 1 != currentDate.getMonth() + 1 || oldDate.getDate() != currentDate.getDate()) {
+    if (oldDate.getFullYear() != currentDate.getFullYear() || oldDate.getMonth() != currentDate.getMonth() || oldDate.getDate() != currentDate.getDate()) {
         return null;
     }
-    let currentSecondTime = currentDate.getHours() * 3600 + currentDate.getMinutes() * 60 + currentDate.getSeconds();
-    let oldSecondTime = oldDate.getHours() * 3600 + oldDate.getMinutes() * 60 + oldDate.getSeconds();
-    let timeAfterLock = (currentSecondTime - oldSecondTime);
-    let unlockGameFor = 30 * 60; // by second
-    if (timeAfterLock / 60 > 60) return null;
+    const toSeconds = date =>
+        date.getHours() * 3600 + date.getMinutes() * 60 + date.getSeconds();
+    let secondPassed = toSeconds(currentDate) - toSeconds(oldDate);
+    let unlockAfter = 10 * 60; // by second
+    let maxTime = 60; // by minuts
+    if (secondPassed / 60 > maxTime) return null;
     const observe = new MutationObserver((mutations, obs) => {
         let lockedBtn = document.querySelector(".download-game-btn")
         let unlockedBtn = document.querySelector(".download-game-btn.unlocked")
-        if (lockedBtn && unlockedBtn) {
-            if (timeAfterLock > unlockGameFor) {
-                unlockedBtn.classList.remove("hidden");
-                lockedBtn.classList.add("hidden");
-            } else {
-                unlockedBtn.classList.add("hidden");
-                lockedBtn.classList.remove("hidden");
-                let counterBeforeUnlock = unlockGameFor - ((currentSecondTime - oldSecondTime));
-                let interval = setInterval(() => {
-                    console.log(counterBeforeUnlock) ;
-                    counterBeforeUnlock--;
-                    if (counterBeforeUnlock < 0) {
-                        clearInterval(interval);
-                        checkGameUnlocked(date, gameName);
-                    }
-                }, 1000);
-            }
-            obs.disconnect();
+        let notification = document.querySelector(".notification");
+        let timerCountdown = document.querySelector(".timer-countdown");
+        let closeNotiBtn = document.querySelector(".closebtn");
+        if (!lockedBtn || !unlockedBtn || !notification || !timerCountdown || !closeNotiBtn) return;
+        unlockedBtn.addEventListener("click", event => {
+            gtag('event', 'download_clicked', {
+                'game_name': gameName,
+            });
+        })
+        if (secondPassed > unlockAfter) {
+            unlockedBtn.classList.remove("hidden");
+            lockedBtn.classList.add("hidden");
+            notification.classList.add("hidden");
+        } else {
+            unlockedBtn.classList.add("hidden");
+            lockedBtn.classList.remove("hidden");
+            notification.classList.remove("hidden");
+
+            let secondsLeft = unlockAfter - secondPassed;
+            const updateTimerDisplay = () => {
+                let minutes = Math.floor(secondsLeft / 60);
+                let seconds = secondsLeft % 60;
+                timerCountdown.innerHTML = `<span>${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}</span>`
+            };
+            closeNotiBtn.addEventListener("click", event => {
+                event.preventDefault();
+                notification.classList.add("hidden");
+            })
+            document.querySelector(".unlock-now").addEventListener('click', event => {
+                gtag('event', 'offer_clicked', {
+                    'game_name': gameName,
+                });
+            })
+            updateTimerDisplay();
+            let interval = setInterval(() => {
+                updateTimerDisplay();
+                secondsLeft --;
+                if (secondsLeft  < 0) {
+                    clearInterval(interval);
+                    notification.classList.add("hidden");
+                    gtag('event', 'game_unlocked', {
+                        'game_name': gameName,
+                    });
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 200);
+                }
+            }, 1000);
         }
+        obs.disconnect();
     });
     observe.observe(document.body, {
         childList: true,

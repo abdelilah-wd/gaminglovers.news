@@ -25,17 +25,21 @@ body {
     color: #e53637;
     cursor: pointer;
 }
+
 .go-down i {
     transition: 0.5s;
 }
+
 .go-down i {
     animation: godown 0.5s ease-in-out alternate infinite;
 }
+
 @keyframes godown {
     to {
         transform: translateY(1rem);
     }
 }
+
 .download-header {
     width: 100%;
     display: flex;
@@ -115,7 +119,8 @@ body {
     color: #d1d5db;
 }
 
-.download-game-btn {
+.download-game-btn,
+.unlock-now {
     display: block;
     width: 100%;
     text-align: center;
@@ -130,8 +135,45 @@ body {
     margin-top: 10px;
 }
 
-.download-game-btn:hover {
+.download-game-btn:hover,
+.unlock-now:hover {
     background: linear-gradient(to right, #0284c7, #2563eb);
+}
+
+.unlock-now {
+    width: fit-content;
+    margin: auto;
+    padding: 8px 15px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.download-game-btn {
+    z-index: 1;
+
+}
+
+.download-game-btn.unlocked {
+    background: green;
+    font-weight: 700;
+    font-size: 18px;
+    border: 2px solid green;
+    transition: 0.5s;
+}
+
+.download-game-btn.unlocked:hover {
+    background: transparent;
+    color: green;
+}
+
+.download-game-btn.hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    z-index: -1;
+    transition: 0.1s;
 }
 
 .screenshot {
@@ -143,4 +185,74 @@ body {
 .screenshot img {
     width: 100%;
     display: block;
+}
+
+.notification {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 50%;
+    width: 80%;
+    margin: auto;
+    transform: translateX(-50%);
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.notification.hidden {
+    opacity: 0;
+    z-index: -1;
+}
+
+@media (max-width: 767px) {
+    .notification {
+        width: 90%;
+    }
+}
+
+.notification .closebtn {
+    width: 30px;
+    height: 26px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: red;
+    /* border-radius: 50%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: white;
+}
+
+.notification .timer-countdown span {
+    background-color: #4444;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    font-family: 'Oswald', sans-serif;
+
+}
+
+.timer-countdown {
+    transform: scale(1);
+    transition: 0.1s;
+    animation: pulse 1s infinite;
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
