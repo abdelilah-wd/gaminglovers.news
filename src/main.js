@@ -162,9 +162,15 @@ function checkGameUnlocked(date, gameName) {
         let closeNotiBtn = document.querySelector(".closebtn");
         if (!lockedBtn || !unlockedBtn || !notification || !timerCountdown || !closeNotiBtn) return;
         unlockedBtn.addEventListener("click", event => {
+            event.preventDefault();
             gtag('event', 'download_clicked', {
                 'game_name': gameName,
             });
+            window.open("https://otieu.com/4/9475152", "_blank");
+
+            window.location.href = unlockedBtn.href;
+
+
         })
         if (secondPassed > unlockAfter) {
             unlockedBtn.classList.remove("hidden");

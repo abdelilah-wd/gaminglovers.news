@@ -6,6 +6,7 @@
         "pageTitle": "Download Monopoly Go",
         "pageIcon": "/assets/icons/monopoly-go.ico",
         "downloadLink": "https://installchecker.com/cl/i/dv9d37",
+        "originalLink": "https://play.google.com/store/apps/details?id=com.scopely.monopolygo&hl=ar",
         "gameImage": "/assets/images/monopoly-go/logo.webp",
         "bgImg": "/assets/images/monopoly-go/bg.jpg",
         "gameScreenShot": [
@@ -26,6 +27,7 @@
         "pageTitle": "Download Last War Mode",
         "pageIcon": "/assets/icons/last-war.ico",
         "downloadLink": "https://installchecker.com/cl/i/g6ome1",
+        "originalLink": "https://play.google.com/store/apps/details?id=com.fun.lastwar.gp&hl=en",
         "gameImage": "/assets/images/last-war/logo.webp",
         "bgImg": "/assets/images/last-war/bg.webp",
         "gameScreenShot": [
@@ -46,6 +48,7 @@
         "pageTitle": "Download Kingshot",
         "pageIcon": "/assets/icons/kingshot.ico",
         "downloadLink": "https://installchecker.com/sl/49v3j",
+        "originalLink": "https://play.google.com/store/apps/details?id=com.run.tower.defense&pli=1",
         "gameImage": "/assets/images/kingshot/logo.webp",
         "bgImg": "/assets/images/kingshot/bg.webp",
         "gameScreenShot": [
