@@ -166,7 +166,7 @@ function checkGameUnlocked(date, gameName) {
             gtag('event', 'download_clicked', {
                 'game_name': gameName,
             });
-            window.open("https://otieu.com/4/9475152", "_blank");
+            window.open("https://otieu.com/4/9444482", "_blank");
 
             window.location.href = unlockedBtn.href;
 
