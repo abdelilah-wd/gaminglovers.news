@@ -170,6 +170,9 @@ function checkGameUnlocked(date, gameName) {
             unlockedBtn.classList.remove("hidden");
             lockedBtn.classList.add("hidden");
             notification.classList.add("hidden");
+            gtag('event', 'game_unlocked', {
+                'game_name': gameName,
+            });
         } else {
             unlockedBtn.classList.add("hidden");
             lockedBtn.classList.remove("hidden");
