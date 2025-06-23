@@ -78,7 +78,7 @@ export default function setUpDownloadPage(pageData) {
                     unlockGames[downloadBtn.getAttribute("data-name")] = { time: finalDate }
                     window.localStorage.setItem("unlockGames", JSON.stringify(unlockGames));
                 }
-                gtag('event', 'countdown_started', { game_name: [downloadBtn.getAttribute("data-name")] });
+                gtag('event', 'countdown_started', { game_name: downloadBtn.getAttribute("data-name") });
                 setTimeout(() => {
                     window.location.reload();
                 }, 500);

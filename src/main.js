@@ -141,7 +141,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 })
 
-function checkGameUnlocked(date, gameName) {
+export function checkGameUnlocked(date = undefined, gameName) {
+    if (!date)
+        date = JSON.parse(window.localStorage.unlockGames)[gameName].time;
+    console.log(date);
     console.log(gameName);
     let currentDate = new Date();
     let oldDate = new Date(date);
